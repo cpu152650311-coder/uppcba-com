@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMT vs Through-Hole vs Mixed Assembly: How to Choose the Right Process — Uppcba Blog</title>
+  <meta name="description" content="Understand the differences between SMT, through-hole, and mixed PCB assembly. A practical decision guide for product teams and procurement managers covering component compatibility, cost, reliability, and production volume.">
+  <link rel="canonical" href="https://uppcba.com/blog/post-5.html">
+  <meta property="og:title" content="SMT vs Through-Hole vs Mixed Assembly: How to Choose the Right Process — Uppcba Blog">
+  <meta property="og:description" content="Understand the differences between SMT, through-hole, and mixed PCB assembly. A practical decision guide covering component compatibility, cost, reliability, and production volume.">
+  <meta property="og:image" content="https://uppcba.com/generated/ill-process-compare.webp">
+  <meta property="og:url" content="https://uppcba.com/blog/post-5.html">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    .article-cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--copper);margin-bottom:var(--sp-2)}
+    .related-heading{font-family:var(--font-display);font-weight:400;font-size:var(--text-h4);color:var(--text-primary);margin-bottom:var(--sp-4)}
+    .card-img-wrap{position:relative;overflow:hidden}
+    .card-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+    .card-cat-pill{position:absolute;top:var(--sp-2);left:var(--sp-2);display:inline-block;padding:.25em .65em;font-size:var(--text-xs);font-weight:600;background:var(--copper);color:#fff;border-radius:var(--radius-sm);text-transform:uppercase;letter-spacing:var(--ls-label)}
+    .card-date{font-size:var(--text-xs);color:var(--text-secondary);margin-bottom:var(--sp-1)}
+    .card-excerpt{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2)}
+    .card-link{display:inline-flex;align-items:center;gap:.25rem;font-size:var(--text-sm);font-weight:600;color:var(--copper);text-decoration:none;transition:color var(--transition-fast)}
+    .card-link:hover{color:var(--copper-hover)}
+    .article-illustration{border-radius:var(--radius-sm);margin-block:var(--sp-5);border:1px solid var(--border-default)}
+    .cta-secondary-link-post{display:inline-flex;align-items:center;color:var(--text-on-dark);font-size:var(--text-sm);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,236,242,0.4);transition:color var(--transition-fast),text-decoration-color var(--transition-fast)}
+    .cta-secondary-link-post:hover{color:var(--copper-hover);text-decoration-color:var(--copper-hover)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SMT vs Through-Hole vs Mixed Assembly: How to Choose the Right Process for Your PCB",
+    "description": "Understand the differences between SMT, through-hole, and mixed PCB assembly. A practical decision guide covering component compatibility, cost, reliability, and production volume.",
+    "image": "https://uppcba.com/generated/ill-process-compare.webp",
+    "datePublished": "2026-07-14",
+    "author": {"@type": "Organization", "name": "Uppcba"}
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home"><span class="nav-logo-text">Uppcba</span></a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a><a href="../about.html">About</a>
+        <div class="nav-dropdown"><a href="../products.html" class="nav-dropdown-toggle">Products</a><div class="nav-dropdown-menu"><a href="../products/smt.html">SMT Assembly</a><a href="../products/dip.html">DIP Assembly</a><a href="../products/mixed.html">Mixed Assembly</a></div></div>
+        <a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main>
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <img src="/generated/ill-process-compare.webp" alt="Abstract comparison of surface mount components and through-hole leads on a PCB, navy and copper tones" class="article-illustration" style="width:100%;max-width:720px;height:auto;border-radius:var(--radius-sm);margin-bottom:var(--sp-4);" data-img-role="content">
+        <span class="article-category">Process Selection Guide</span>
+        <h1>SMT vs Through-Hole vs Mixed Assembly: How to Choose the Right Process for Your PCB</h1>
+        <div class="article-meta">July 14, 2026 &middot; 8 min read</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Every PCB assembly project starts with a decision that shapes cost, reliability, and production speed: which assembly process should you use? Surface mount technology (SMT) dominates modern electronics, but through-hole technology (DIP) remains essential for connectors, high-power components, and applications where mechanical strength matters. And many boards need both — a mixed-technology approach that combines SMT speed with through-hole durability.</p>
+      <p>At Uppcba, we assemble boards across all three process types for clients in 18 countries, from 5-unit prototypes to 5,000-unit production runs. This guide walks through the decision framework our engineers use to recommend a process for each project — based on component types, production volume, reliability requirements, and cost targets.</p>
+
+      <h2>Surface Mount Technology (SMT): The Workhorse of Modern PCB Assembly</h2>
+      <p>SMT places components directly onto the surface of the PCB — no drilled holes, no leads through the board. Components are held in place by solder paste, which is printed through a laser-cut stencil, then reflowed in a controlled oven. The entire process is automated from paste printing through optical inspection.</p>
+      <p>The throughput advantage is substantial: a modern SMT line at Uppcba places 40,000 to 60,000 components per hour across multiple pick-and-place heads. For a typical mid-complexity board with 150 components, that translates to roughly 9 seconds of placement time per board — not counting paste printing and reflow, which run in parallel. This throughput is the reason SMT dominates production volumes above 100 units.</p>
+      <p>SMT also enables miniaturization. Components as small as 0201 (0.6 mm × 0.3 mm) are standard on our lines, and we routinely handle 0.4 mm pitch BGAs and 0.5 mm pitch QFPs. The absence of drilled leads means both sides of the board can be populated — double-sided SMT effectively doubles the component density without increasing board area.</p>
+      <p><strong>Choose SMT when:</strong> your components are surface-mount packages (SOIC, QFP, BGA, 0402–1206 passives), your production volume exceeds 100 units, board size is constrained, or you need the lowest per-unit assembly cost at volume.</p>
+
+      <img src="/generated/ill-smt-detail.webp" alt="Close-up of surface mount components on a PCB with solder joints and fine-pitch IC" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>Through-Hole Technology (DIP): When Mechanical Strength Matters</h2>
+      <p>Through-hole assembly inserts component leads through drilled holes in the PCB, then solders them — either by wave soldering for batch processing or by hand for low-volume and prototype work. The resulting solder joint wraps through the board, creating a mechanical anchor that SMT joints cannot match.</p>
+      <p>This mechanical advantage is not subtle. In vibration testing per IEC 60068-2-6, through-hole connectors routinely survive 10G vibration levels where equivalent SMT-only connectors begin showing joint cracks at 5G to 7G. For automotive under-hood electronics, industrial motor controllers, and aerospace power supplies, this difference is the margin between field reliability and field failure.</p>
+      <p>Through-hole also handles current better. A typical through-hole pin in a TO-220 power package can carry 5A to 10A continuously, where an equivalent SMT pad on the same package is limited by trace width and thermal dissipation through the board surface. For power supply designs above 50W, through-hole output components often eliminate the need for additional copper weight or external heatsinking.</p>
+      <p><strong>Choose through-hole when:</strong> your design uses DIP ICs, axial/radial passives, connectors with mechanical insertion force, power transistors (TO-220, TO-247), or any connector that will experience repeated mating cycles in the field.</p>
+
+      <img src="/generated/ill-dip-wave.webp" alt="Through-hole components on a PCB with leads protruding, wave soldering context" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>Mixed Assembly: When One Process Is Not Enough</h2>
+      <p>The reality for most real-world designs is that neither pure SMT nor pure through-hole is sufficient. A motor controller might use surface-mount microcontrollers, op-amps, and passives for the control section, but through-hole MOSFETs and screw terminals for the power stage. An industrial sensor might pack signal conditioning into SMT ICs but require a through-hole connector for field wiring. These are mixed-technology boards, and they represent roughly 40% of the projects we assemble at Uppcba.</p>
+      <p>The mixed assembly process runs in two sequential passes. First, surface-mount components are placed and reflowed as in a standard SMT run. Then, through-hole components are inserted — either by hand for low volume or by selective soldering machine for higher volume — and soldered. The second pass adds process time: roughly 30 to 60 minutes per batch for wave soldering with fixture loading, or 2 to 4 seconds per joint for selective soldering. This additional time is the cost of getting both SMT density and through-hole durability on the same board.</p>
+      <p><strong>Key consideration for mixed assembly:</strong> through-hole components must survive the SMT reflow profile — typically peaking at 240°C to 250°C for lead-free solder. Most connectors and power devices are rated for this temperature, but electrolytic capacitors, relays, and some switches are not. If a through-hole component cannot survive reflow, it must be placed after SMT in a second manual or selective soldering step, which increases labor cost per board.</p>
+
+      <img src="/generated/ill-mixed-board.webp" alt="PCB with both surface mount components and through-hole connectors, representing mixed assembly" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>Decision Matrix: Which Components Drive Which Process</h2>
+      <p>The simplest way to determine your assembly process is to inventory your BOM by package type. The component types on your board — not your preference — drive the process decision. Here is the decision logic our engineers apply to every incoming design:</p>
+      <table class="dfm-checklist">
+        <thead><tr><th>If your BOM contains…</th><th>Required Process</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Only SMT packages (SOIC, QFP, BGA, chip passives)</td><td><strong>SMT only</strong></td><td>Fastest throughput, lowest per-unit cost at volume</td></tr>
+          <tr><td>Only through-hole packages (DIP, axial, TO-220)</td><td><strong>Through-hole only</strong></td><td>Rare for new designs; mostly legacy or high-power</td></tr>
+          <tr><td>Mix of SMT and through-hole</td><td><strong>Mixed assembly</strong></td><td>Two-pass process; ~40% of our projects</td></tr>
+          <tr><td>Through-hole connectors rated for reflow</td><td><strong>SMT + pin-in-paste</strong></td><td>Single-pass; avoids second soldering step</td></tr>
+          <tr><td>BGA + through-hole power devices</td><td><strong>Mixed + X-ray inspection</strong></td><td>BGA needs X-ray; through-hole needs wave or selective</td></tr>
+          <tr><td>Fine-pitch (≤0.5 mm) + large connectors</td><td><strong>Mixed + stencil optimization</strong></td><td>Step stencil recommended for varied paste volume</td></tr>
+        </tbody>
+      </table>
+      <p>The pin-in-paste option deserves special attention. If your through-hole connectors are rated for reflow temperatures — increasingly common with newer connector families — you can print solder paste into the through-holes during the SMT paste printing step, place the connector alongside SMT components, and reflow everything in a single pass. This eliminates the entire second soldering step and its associated time and cost. We recommend pin-in-paste whenever the connector datasheet confirms reflow compatibility above 245°C for 30 seconds.</p>
+
+      <img src="/generated/ill-process-matrix.webp" alt="Decision flowchart or comparison graphic showing SMT vs through-hole vs mixed process selection" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>Cost Comparison by Process and Volume</h2>
+      <p>Process choice directly affects per-unit cost, and the relationship changes with volume. SMT has higher upfront tooling cost — the stencil alone runs $80 to $150 for a laser-cut stainless steel foil — but the per-unit assembly cost drops rapidly with quantity because placement is fully automated. Through-hole has lower tooling cost but higher per-unit labor, especially for hand-soldered boards. Mixed assembly sits between, with two sets of tooling and two process steps.</p>
+      <p>Based on our production data, here are representative per-unit assembly costs for a mid-complexity board with 120 components, excluding component procurement:</p>
+      <table class="dfm-checklist">
+        <thead><tr><th>Volume</th><th>SMT Only</th><th>Through-Hole Only</th><th>Mixed (70% SMT)</th></tr></thead>
+        <tbody>
+          <tr><td>Prototype (5 units)</td><td>$120–180/board</td><td>$90–140/board</td><td>$150–220/board</td></tr>
+          <tr><td>Low-volume (100 units)</td><td>$18–25/board</td><td>$25–35/board</td><td>$22–32/board</td></tr>
+          <tr><td>Mid-volume (1,000 units)</td><td>$5–8/board</td><td>$18–25/board</td><td>$8–14/board</td></tr>
+          <tr><td>Production (5,000 units)</td><td>$2–4/board</td><td>$14–20/board</td><td>$5–9/board</td></tr>
+        </tbody>
+      </table>
+      <p>At prototype quantities, the cost differences between processes are compressed — setup and programming time dominates over per-unit placement time. At 5,000 units, SMT's automation advantage creates a 5x to 7x cost gap versus through-hole. This is why high-volume consumer electronics are almost entirely SMT, and why through-hole persists primarily in low-volume industrial, automotive, and aerospace applications where mechanical reliability justifies the cost premium.</p>
+
+      <h2>Quality and Inspection: Different Processes, Different Failure Modes</h2>
+      <p>Each process brings its own inspection requirements because the dominant failure modes differ. SMT failures are dominated by solder paste issues — insufficient paste, bridging between adjacent pads, and tombstoning of small passives. Automated Optical Inspection (AOI) catches these inline, processing roughly 2 to 5 minutes per board. Our AOI system checks every solder joint against a golden-board reference, flagging deviations in joint shape, size, and position.</p>
+      <p>Through-hole failures shift toward hole fill and mechanical issues: insufficient hole fill (barrel fill below 75% per IPC-A-610 Class 3), lifted pads from excessive thermal stress, and cracked joints from mechanical load. Visual inspection with magnification catches most through-hole defects, but X-ray is sometimes required for multi-layer boards where internal pad connections are not visible from the surface.</p>
+      <p>For mixed-technology boards, the inspection challenge is that both failure modes coexist on the same board. Our standard quality workflow for mixed assembly includes AOI for the SMT portion, visual inspection with magnification for through-hole joints, and X-ray for any BGA or QFN packages present. A complete first-article inspection report — including cross-sections if specified — is standard for every new project before production release.</p>
+
+      <img src="/generated/ill-quality-inspect.webp" alt="Inspection comparison: AOI camera over SMT board alongside manual through-hole inspection station" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>How to Specify Your Assembly Process in an RFQ</h2>
+      <p>When requesting a quote, the process type should be clear — but surprisingly often, it is not. Here is what a complete process specification looks like in a request for quotation:</p>
+      <ol>
+        <li><strong>Assembly type:</strong> SMT only / through-hole only / mixed. If mixed, specify the approximate percentage of through-hole components by pin count.</li>
+        <li><strong>Board dimensions and panelization:</strong> Single board size and preferred panel format (if any). Include Gerber data with paste mask layers.</li>
+        <li><strong>Component list:</strong> BOM with manufacturer part numbers and at least one approved alternate per critical component. Flag any components that are not reflow-compatible.</li>
+        <li><strong>Inspection standard:</strong> Specify IPC-A-610 class (Class 2 or Class 3) and any additional requirements — X-ray for BGA, cross-section for first article, functional test specification.</li>
+        <li><strong>Special requirements:</strong> Conformal coating, potting, press-fit connectors, or any non-standard process steps.</li>
+      </ol>
+      <p>A clear process specification eliminates the back-and-forth that delays quotations by 2 to 3 business days. When our engineering team receives a complete package matching the format above, the typical quote turnaround is under 24 hours.</p>
+
+      <h2>Conclusion: Let the Components Decide</h2>
+      <p>The assembly process is not a design choice — it is a consequence of your component selection. Surface-mount components drive SMT. Through-hole components drive DIP. A mix of both drives mixed assembly. The most cost-effective approach is almost always the one that matches your BOM, not the one that seems cheaper in isolation.</p>
+      <p>If you have a design in progress and are uncertain which process it requires, send the BOM and a draft layout to our engineering team for a free process assessment. We will identify which process matches your component selection, flag any parts that create unnecessary process complexity, and recommend alternatives where available — typically within one business day. That assessment costs nothing and can prevent the most expensive mistake in PCB assembly: choosing the wrong process before you know what your board actually needs.</p>
+    </div>
+    <section class="section-gap-md" style="background:var(--surface-gray);" aria-labelledby="related-heading">
+      <div class="container"><h2 class="related-heading" id="related-heading">Related Articles</h2>
+        <div class="grid-2">
+          <article class="blog-card"><div class="card-img-wrap"><img src="/generated/blog-dfm-cover.webp" alt="PCB trace routing pattern representing DFM optimization" data-img-role="content" loading="lazy"><span class="card-cat-pill">Design for Manufacturing</span></div><div class="blog-card-body"><p class="card-date">June 15, 2026</p><h3 class="blog-card-title">Design for Manufacturability: Preparing Your PCB for SMT Assembly</h3><p class="card-excerpt">DFM principles to reduce production cost and improve yield. Panelization, component placement, stencil design, and BOM best practices.</p><a href="post-1.html" class="card-link">Read More &rarr;</a></div></article>
+          <article class="blog-card"><div class="card-img-wrap"><img src="/generated/blog-rework-cover.webp" alt="Magnifying glass over solder joint" data-img-role="content" loading="lazy"><span class="card-cat-pill">Industry Trends</span></div><div class="blog-card-body"><p class="card-date">May 28, 2026</p><h3 class="blog-card-title">The Cost of Rework: Why Quality Inspection Matters in PCB Assembly</h3><p class="card-excerpt">Defects caught late cost exponentially more to fix. The economics of inspection across the assembly lifecycle.</p><a href="post-3.html" class="card-link">Read More &rarr;</a></div></article>
+        </div></div>
+    </section>
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div><h2 class="cta-band-title">Not sure which process your board needs?</h2><p class="cta-band-lead">Send us your BOM and draft layout for a free process assessment. Our engineers respond with a process recommendation and quote within one business day.</p></div>
+        <div class="cta-band-actions" style="align-items:center;"><a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Get a Free Assessment</a><a href="../contact.html" class="cta-secondary-link-post">Contact Engineering</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container"><div class="footer-grid">
+      <div class="footer-col"><h4>Uppcba</h4><p>Precision PCB assembly for prototype through mid-volume production. ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../products.html">Products</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../products/smt.html">SMT Assembly</a></li><li><a href="../products/dip.html">DIP Assembly</a></li><li><a href="../products/mixed.html">Mixed Assembly</a></li><li><a href="../products.html">Box Build</a></li><li><a href="../about.html">DFM Review</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>Email: inquiry@uppcba.com<br>Phone: +86 (755) 8xxx-xxxx<br><br>Shenzhen, Guangdong<br>China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Uppcba. All rights reserved.</span><span>Built with precision.</span></div></div>
+  </footer>
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form onsubmit="return handleInquiry(event)" novalidate>
+          <div class="form-group"><label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label><input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label><input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label" for="inq-company">Company</label><input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name"></div>
+          <div class="form-group"><label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label><textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../inquiry-handler.js"></script>
+  <script src="../reveal.js"></script>
+</body>
+</html>
