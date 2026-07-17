@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Sourcing Strategies for PCB Assembly: BOM Kitting, Lead Time Risks, and Counterfeit Prevention — Uppcba Blog</title>
+  <meta name="description" content="A procurement manager's guide to component sourcing for PCB assembly — BOM kitting strategy, distributor tier pricing, lead time risk management, and counterfeit detection. Includes real cost impact data from Shenzhen-based manufacturing.">
+  <link rel="canonical" href="https://uppcba.com/blog/post-10.html">
+  <meta property="og:title" content="Component Sourcing Strategies for PCB Assembly: BOM Kitting, Lead Time Risks, and Counterfeit Prevention — Uppcba Blog">
+  <meta property="og:description" content="Procurement guide to component sourcing for PCB assembly: BOM kitting strategy, distributor tier pricing, lead time risk management, counterfeit detection.">
+  <meta property="og:image" content="https://uppcba.com/generated/blog-sourcing-cover.webp">
+  <meta property="og:url" content="https://uppcba.com/blog/post-10.html">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    .article-cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--copper);margin-bottom:var(--sp-2)}
+    .related-heading{font-family:var(--font-display);font-weight:400;font-size:var(--text-h4);color:var(--text-primary);margin-bottom:var(--sp-4)}
+    .card-img-wrap{position:relative;overflow:hidden}
+    .card-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+    .card-cat-pill{position:absolute;top:var(--sp-2);left:var(--sp-2);display:inline-block;padding:.25em .65em;font-size:var(--text-xs);font-weight:600;background:var(--copper);color:#fff;border-radius:var(--radius-sm);text-transform:uppercase;letter-spacing:var(--ls-label)}
+    .card-date{font-size:var(--text-xs);color:var(--text-secondary);margin-bottom:var(--sp-1)}
+    .card-excerpt{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2)}
+    .card-link{display:inline-flex;align-items:center;gap:.25rem;font-size:var(--text-sm);font-weight:600;color:var(--copper);text-decoration:none;transition:color var(--transition-fast)}
+    .card-link:hover{color:var(--copper-hover)}
+    .article-illustration{border-radius:var(--radius-sm);margin-block:var(--sp-5);border:1px solid var(--border-default)}
+    .cta-secondary-link-post{display:inline-flex;align-items:center;color:var(--text-on-dark);font-size:var(--text-sm);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,236,242,0.4);transition:color var(--transition-fast),text-decoration-color var(--transition-fast)}
+    .cta-secondary-link-post:hover{color:var(--copper-hover);text-decoration-color:var(--copper-hover)}
+    .checklist-table{width:100%;border-collapse:collapse;margin-block:var(--sp-4);font-size:var(--text-sm)}
+    .checklist-table th{text-align:left;padding:var(--sp-2) var(--sp-3);background:var(--copper-light);color:var(--text-primary);font-weight:600;border-bottom:2px solid var(--copper)}
+    .checklist-table td{padding:var(--sp-2) var(--sp-3);border-bottom:1px solid var(--border-default);color:var(--text-secondary);line-height:var(--lh-relaxed)}
+    .cost-callout{background:var(--copper-light);border-left:4px solid var(--copper);padding:var(--sp-4);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-block:var(--sp-4)}
+    .cost-callout h3{font-family:var(--font-display);font-weight:400;color:var(--text-primary);margin-bottom:var(--sp-2)}
+    .cost-callout p{color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:0}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Component Sourcing Strategies for PCB Assembly: BOM Kitting, Lead Time Risks, and Counterfeit Prevention",
+    "description": "A procurement manager's guide to component sourcing for PCB assembly — BOM kitting strategy, distributor tier pricing, lead time risk management, and counterfeit detection. Includes real cost impact data from Shenzhen-based manufacturing.",
+    "image": "https://uppcba.com/generated/blog-sourcing-cover.webp",
+    "datePublished": "2026-07-17",
+    "author": {"@type": "Organization", "name": "Uppcba"}
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home"><span class="nav-logo-text">Uppcba</span></a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a><a href="../about.html">About</a>
+        <div class="nav-dropdown"><a href="../products.html" class="nav-dropdown-toggle">Products</a><div class="nav-dropdown-menu"><a href="../products/smt.html">SMT Assembly</a><a href="../products/dip.html">DIP Assembly</a><a href="../products/mixed.html">Mixed Assembly</a></div></div>
+        <a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main>
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <img src="/generated/blog-sourcing-cover.webp" alt="Close-up macro photograph of electronic components on a dark navy surface with warm copper reflections — microcontrollers, capacitors, and connectors arranged with industrial precision" class="article-illustration" style="width:100%;max-width:720px;height:auto;border-radius:var(--radius-sm);margin-bottom:var(--sp-4);" data-img-role="content">
+        <span class="article-category">Procurement Strategy</span>
+        <h1>Component Sourcing Strategies for PCB Assembly: BOM Kitting, Lead Time Risks, and Counterfeit Prevention</h1>
+        <div class="article-meta">July 17, 2026 &middot; 12 min read</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Components account for 50–70% of your total PCB assembly cost. That single number — larger than labor, tooling, testing, and logistics combined — means your component sourcing strategy is the single biggest lever you have on your electronics manufacturing budget. Yet most procurement conversations focus on the assembly line item: the per-pad rate, the NRE, the stencil cost. Those matter, but they're rounding errors compared to what happens when your BOM hits the distributor marketplace.</p>
+      <p>This guide covers the three dimensions of component sourcing that determine whether your assembly program runs on budget and on schedule: BOM kitting and distributor strategy, lead time risk management in an unpredictable semiconductor supply chain, and counterfeit prevention — a problem that costs the electronics industry an <a href="https://www.era.org/" target="_blank" rel="noopener">estimated $75 billion annually</a> according to industry research. Each section includes actionable procurement practices drawn from our experience managing component supply chains for <a href="../blog/post-6.html">turnkey assembly programs</a> at our Shenzhen facility.</p>
+
+      <h2>BOM Kitting Strategy: Distributor Tiers and Volume Pricing</h2>
+      <p>Your BOM pricing is determined by three factors: which distributor tier your order qualifies for, how your BOM is structured for sourcing efficiency, and whether your manufacturer's consolidated purchasing power works in your favor.</p>
+
+      <h3>How Distributor Tiers Actually Work</h3>
+      <p>Authorized distributors like Digi-Key, Mouser, Arrow, and Avnet operate on volume-based pricing tiers that are not linear. A microcontroller listed at $5.00 on a distributor's public catalog page might cost $4.20 at 100-unit quantity, $3.10 at 1,000-unit quantity, and $2.35 at 5,000-unit quantity. These thresholds apply per line item, not per order — buying 5,000 units of one part number gets you the 5,000-unit price for that part, even if the rest of your BOM is at lower quantities.</p>
+      <p>The practical implication: a manufacturer sourcing components for multiple client programs simultaneously aggregates demand across programs. Their combined volume on commonly used passives (0402 resistors, 0.1µF MLCCs, standard logic ICs) often hits tiers that an individual company ordering for a single product cannot reach. This is one of the core economic arguments for <a href="../blog/post-6.html">turnkey assembly</a> over consigned kitting — the manufacturer's purchasing power on shared commodity components typically saves 8–18% on BOM cost versus what you'd pay ordering the same parts yourself.</p>
+
+      <img src="/generated/blog-sourcing-bom.webp" alt="Photorealistic 3D render of a PCB assembly BOM document on a workbench, surrounded by component reels and trays in navy-blue ESD-safe bins with copper-toned ambient reflections" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <table class="checklist-table">
+        <thead><tr><th>Distributor Tier</th><th>Typical Annual Spend</th><th>Pricing Advantage vs Catalog</th><th>Who Qualifies</th></tr></thead>
+        <tbody>
+          <tr><td>Catalog (Tier 0)</td><td>&lt;$10K/year</td><td>0% (list price)</td><td>Individual buyers, small labs</td></tr>
+          <tr><td>Registered (Tier 1)</td><td>$10K–50K/year</td><td>5–15% off catalog</td><td>Small OEMs, prototype shops</td></tr>
+          <tr><td>Contract (Tier 2)</td><td>$50K–250K/year</td><td>15–30% off catalog</td><td>Mid-volume manufacturers</td></tr>
+          <tr><td>Strategic (Tier 3)</td><td>$250K+/year</td><td>25–45% off catalog</td><td>Volume manufacturers, EMS with consolidated spend</td></tr>
+        </tbody>
+      </table>
+
+      <p>On a BOM with $18,000 in component cost at catalog pricing (say 500-unit assembly run), moving from Tier 0 to Tier 2 saves $2,700–5,400 — more than the entire SMT assembly labor cost for that run. This is not a marginal optimization; it's a structural cost advantage that changes whether a product is viable at a given price point.</p>
+
+      <div class="cost-callout">
+        <h3>Real-World Impact: BOM Cost by Tier</h3>
+        <p>For a mid-complexity industrial controller board with 85 unique BOM lines, our team recently compared pricing across tiers: $22,100 at Tier 0 catalog pricing, $17,900 at Tier 2 contract pricing, and $15,600 at Tier 3 strategic pricing — a $6,500 spread on a single production run. The per-board component cost drops from $44.20 to $31.20 depending solely on the procurement channel, with zero design changes.</p>
+      </div>
+
+      <h3>BOM Line Consolidation: Fewer Lines = Lower Cost</h3>
+      <p>Every unique BOM line carries a fixed overhead: the purchasing agent has to create a PO, the receiving department has to log it into inventory, the kitting operator has to pick it, and the accounting department has to reconcile it. Industry data suggests each unique BOM line adds approximately $3–8 in procurement overhead, independent of the part's unit cost.</p>
+      <p>Consolidating your BOM reduces this overhead directly. Three concrete strategies:</p>
+      <table class="checklist-table">
+        <thead><tr><th>#</th><th>Strategy</th><th>Example</th><th>Savings</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Standardize passive values</td><td>Replace three different 10kΩ resistors (0402, 0603, 0805) with one 0603 10kΩ where layout allows</td><td>2 fewer BOM lines, better volume pricing on remaining line</td></tr>
+          <tr><td>2</td><td>Merge voltage regulator variants</td><td>Use one adjustable 3A LDO with different feedback resistors instead of three fixed-output LDOs</td><td>2 fewer lines, shared inventory, simplified reflow profile</td></tr>
+          <tr><td>3</td><td>Standardize connector families</td><td>Use one 2×5 pin header (populate 4 pins for 2-signal, all 10 for 5-signal) instead of 2-pin + 4-pin + 10-pin headers</td><td>2 fewer lines, single reel for pick-and-place</td></tr>
+        </tbody>
+      </table>
+      <p>These consolidations aren't always feasible — analog circuits have legitimate reasons for specific resistor packages and values — but a <a href="../blog/post-1.html">DFM review that includes BOM optimization</a> typically identifies 3–8 consolidation opportunities per board, reducing BOM lines by 5–15% without compromising functionality.</p>
+
+      <h2>Lead Time Risk: The Supply Chain Variable That Breaks Schedules</h2>
+      <p>In a perfect world, every component on your BOM is in stock at your distributor of choice and ships within 48 hours. In the real world, semiconductor lead times oscillate between 8 weeks (normal market) and 52+ weeks (allocation market), and a single BOM line on 26-week lead time can delay your entire production run.</p>
+
+      <img src="/generated/blog-sourcing-supplychain.webp" alt="Macro photo of stacked component shipping boxes with barcode labels on a factory receiving dock shelf, warm industrial lighting with copper accents, semiconductor reels visible in ESD packaging" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h3>The Real Lead Time Landscape (Q3 2026)</h3>
+      <p>Based on our procurement data at Uppcba's Shenzhen facility, current lead times across major component categories:</p>
+      <table class="checklist-table">
+        <thead><tr><th>Component Category</th><th>Typical Lead Time</th><th>Risk Level</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Passives (R, C, L — standard values)</td><td>In stock – 2 weeks</td><td style="color:#2d8a4e;">Low</td><td>Massive production capacity; shortages rare for standard values</td></tr>
+          <tr><td>Standard logic ICs (74-series, op-amps, regulators)</td><td>2–8 weeks</td><td style="color:#2d8a4e;">Low</td><td>Multi-sourced; substitute parts widely available</td></tr>
+          <tr><td>Microcontrollers (STM32, MSP430, PIC, RISC-V)</td><td>8–26 weeks</td><td style="color:#c87f2e;">Medium</td><td>Brand-specific; STM32 and TI MSP430 historically volatile</td></tr>
+          <tr><td>FPGAs and SoCs (Xilinx, Altera, Lattice)</td><td>16–40 weeks</td><td style="color:#c87f2e;">Medium-High</td><td>Lead-time sensitive to data center and automotive demand cycles</td></tr>
+          <tr><td>Specialty analog (isolated gate drivers, precision ADCs)</td><td>12–36 weeks</td><td style="color:#c61a1a;">High</td><td>Single-sourced parts; no drop-in alternatives</td></tr>
+          <tr><td>Custom/semi-custom ASICs</td><td>26–52 weeks</td><td style="color:#c61a1a;">High</td><td>Fab allocation dependent; requires 6+ month forecasting</td></tr>
+          <tr><td>Connectors (Molex, JST, TE, Amphenol)</td><td>2–12 weeks</td><td style="color:#2d8a4e;">Low-Medium</td><td>Widely multi-sourced; pin-compatible alternatives abundant</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cost-callout">
+        <h3>The Hidden Cost of a 26-Week Lead Time Part</h3>
+        <p>One BOM line on 26-week allocation delays your entire production run by 26 weeks. If your product generates $50,000/month in revenue, that single out-of-stock microcontroller costs you $300,000 in deferred revenue — far more than the $3–8 per unit you'd pay to redesign around an in-stock alternative. This is the calculus that procurement managers and hardware engineers need to do together: the cost of a design change versus the cost of waiting.</p>
+      </div>
+
+      <h3>Four Lead Time Mitigation Tactics</h3>
+      <p><strong>1. Pin-compatible alternates in the BOM from day one.</strong> Every BOM line for a microcontroller, power IC, or connector should have at least one pin-compatible alternate listed. During the <a href="../blog/post-1.html">DFM review phase</a>, your manufacturer can verify whether the alternate is mechanically and electrically compatible. This takes a few extra hours during design — and saves months when your primary part hits allocation.</p>
+      <p><strong>2. Buffer stock on single-sourced parts.</strong> If a component cannot be substituted (specialty ADC, custom ASIC, certified wireless module), the math is simple: buffer stock = (maximum historical lead time in weeks + 4 weeks margin) × weekly production volume. For a product running 200 units/week with a part that has hit 32-week lead times, that's 36 weeks × 200 = 7,200 units of buffer stock. The carrying cost — roughly 2–4% of inventory value per month — is insurance against a production line stoppage that costs far more.</p>
+      <p><strong>3. Pre-purchase long-lead items before assembly NRE.</strong> Don't wait until the stencil is cut and the pick-and-place program is written to order components. As soon as the BOM is final, order long-lead items immediately. The 3-week gap between BOM finalization and assembly start is free lead time — use it. This is standard practice at Uppcba: we trigger component procurement for items with lead times over 8 weeks the moment the customer approves the BOM, even while the stencil is still being fabricated.</p>
+      <p><strong>4. Multi-source the assembly itself.</strong> Having a <a href="../blog/post-7.html">qualified secondary assembly partner</a> with its own distributor relationships gives you an alternate procurement channel. Two manufacturers sourcing the same BOM may get different availability from different distributor branches — one might have 500 units in Shenzhen while the other has 300 in Singapore. This redundancy adds complexity but provides insurance for production-continuity-critical programs.</p>
+
+      <h2>Counterfeit Components: Prevention, Detection, and Response</h2>
+      <p>The global counterfeit electronics market is estimated at $75 billion annually, with components entering supply chains through unauthorized distributors, excess-inventory brokers, and e-commerce marketplaces with insufficient verification. Counterfeit parts range from "remarked" components (a lower-spec part relabeled as a higher-spec part) to completely non-functional packages with no silicon inside — and they're increasingly sophisticated, passing visual inspection that would have caught counterfeits a decade ago.</p>
+
+      <img src="/generated/blog-sourcing-counterfeit.webp" alt="Photorealistic 3D cross-section render of a semiconductor IC package revealing internal die, bond wires, and lead frame structure — industrial quality inspection aesthetic on dark navy background with copper-toned metallic layers" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h3>The Three Types of Counterfeit Components</h3>
+      <table class="checklist-table">
+        <thead><tr><th>Type</th><th>What It Is</th><th>Detection Difficulty</th><th>Real-World Consequence</th></tr></thead>
+        <tbody>
+          <tr><td>Remarked / Up-screened</td><td>A genuine but lower-spec part (e.g., commercial temperature grade, slower speed bin) with the original markings removed and higher-spec markings laser-etched</td><td style="color:#c87f2e;">Medium</td><td>Operates normally at room temperature — then fails at -20°C because it was a 0–70°C part sold as -40–85°C</td></tr>
+          <tr><td>Recycled / Pulled</td><td>Components desoldered from scrapped equipment, cleaned, re-tinned, and sold as new. Common for BGAs, QFPs, and connectors from e-waste</td><td style="color:#c61a1a;">High</td><td>Solderability degradation leads to intermittent joints; residual thermal stress causes early-life failure</td></tr>
+          <tr><td>Blank / Non-functional</td><td>A package with no die inside, or a completely different die inside a remarked package. Most dangerous for power components where failure modes include fire</td><td style="color:#2d8a4e;">Low (X-ray catches it)</td><td>Board fails functional test immediately — but if it passes (wrong die that happens to respond), field failure is catastrophic</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Where Counterfeits Enter the Supply Chain</h3>
+      <p>The overwhelming majority of counterfeit components enter through unauthorized or "independent" distributors — not through franchised/authorized channels. A 2023 ERAI study found that of reported counterfeit incidents, 87% originated from non-authorized sources. The remaining 13% were traced to authorized distributors who had unknowingly accepted returned-and-re-stocked inventory that had been swapped with counterfeits — a rarer but documented failure mode.</p>
+      <p>The risk profile by sourcing channel:</p>
+      <table class="checklist-table">
+        <thead><tr><th>Sourcing Channel</th><th>Counterfeit Risk</th><th>Traceability</th><th>Cost Premium vs Catalog</th></tr></thead>
+        <tbody>
+          <tr><td>Franchised/authorized distributor (Arrow, Avnet, Digi-Key, Mouser, Future)</td><td style="color:#2d8a4e;">Near zero</td><td>Full traceability to manufacturer lot/date code</td><td>0% (baseline)</td></tr>
+          <tr><td>Manufacturer direct (TI, ST, Microchip store)</td><td style="color:#2d8a4e;">Zero</td><td>Direct from fab; certificate of conformance available</td><td>-5–10% (better pricing but minimum order quantities apply)</td></tr>
+          <tr><td>Independent broker (excess inventory, spot market)</td><td style="color:#c87f2e;">5–15%</td><td>Varies; reputable brokers provide test reports; others provide nothing</td><td>-20–50% (but risk-adjusted cost is often higher)</td></tr>
+          <tr><td>Online marketplace (AliExpress, eBay, Taobao)</td><td style="color:#c61a1a;">30–70% for ICs</td><td>None; no chain of custody</td><td>-50–90% (do not use for production)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cost-callout">
+        <h3>The Risk-Adjusted Cost Calculation</h3>
+        <p>A $2.50 microcontroller from an independent broker at 50% below authorized distributor pricing saves $2.50 per board. But if counterfeit rate is 10% and a board-level failure costs $50 in diagnosis, rework, and customer impact, the expected cost per board = $2.50 + (0.10 × $50) = $7.50. The "cheaper" part costs 3× more when you factor in failure probability. This math is why ISO 9001 and ISO 13485 certified manufacturers mandate authorized-only sourcing for production — the risk-adjusted cost of unauthorized channels is negative at any discount below ~85%, which the spot market rarely provides on genuine parts.</p>
+      </div>
+
+      <h3>How a Quality Manufacturer Detects Counterfeits Before Assembly</h3>
+      <p>At Uppcba's incoming inspection station, every component reel and tray goes through a multi-step verification process before it enters the production floor. The inspection protocol is designed to catch counterfeits at the point where they're cheapest to intercept — before they're placed on a board:</p>
+      <table class="checklist-table">
+        <thead><tr><th>#</th><th>Check</th><th>Equipment</th><th>What It Catches</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Visual inspection — packaging integrity, label consistency, date/lot code format vs manufacturer standard</td><td>10–40× stereo microscope</td><td>Obvious remarked parts, non-original packaging, label forgery</td></tr>
+          <tr><td>2</td><td>X-ray inspection — internal die/lead frame structure vs known-good reference</td><td>X-ray inspection system (2D)</td><td>Missing die, wrong die size, recycled parts with residual solder, re-tinned leads</td></tr>
+          <tr><td>3</td><td>Solvent test — acetone or IPA rub on marking surface</td><td>Cotton swab + solvent</td><td>Blacktopped/re-marked parts (original marking dissolves or smears)</td></tr>
+          <tr><td>4</td><td>Solderability test — dip-and-look per IPC/JEDEC J-STD-002</td><td>Solder pot + microscope</td><td>Recycled parts with oxidized leads that won't wet properly</td></tr>
+          <tr><td>5</td><td>Electrical verification — curve trace, key parametric test on sample</td><td>Curve tracer, LCR meter, semiconductor analyzer</td><td>Wrong die, out-of-spec electrical parameters, remarked speed grades</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog-sourcing-inspection.webp" alt="Close-up macro shot of a PCB assembly workbench with microscope inspecting a component on a partially assembled circuit board, navy-blue anti-static mat, copper-colored ambient reflections" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <p>This inspection overhead is one reason why <a href="../blog/post-9.html">PCB assembly cost</a> from a certified manufacturer includes more than just machine time and solder paste. The incoming inspection process adds $2–5 per unique BOM line in labor and equipment amortization — but given that a single counterfeit IC slipping through to assembly costs between $500 (caught at functional test) and $50,000+ (field failure with recall implications), the return on that investment is overwhelming.</p>
+
+      <h2>Procurement Checklist: What to Ask Your Assembly Partner About Component Sourcing</h2>
+      <p>Before committing a production program, these questions reveal the difference between a manufacturer that treats component sourcing as a procurement function and one that treats it as a core competency:</p>
+      <table class="checklist-table">
+        <thead><tr><th>#</th><th>Question</th><th>What a Good Answer Looks Like</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>What percentage of BOM spend goes through authorized/franchised channels?</td><td>"100% for production runs. We only source from independent brokers when a customer explicitly requests it, and even then, only with full inspection documentation."</td></tr>
+          <tr><td>2</td><td>Do you consolidate BOM purchasing across client programs for volume discounts?</td><td>"Yes — our passives, standard logic, and common connectors are aggregated across programs. We pass through cost savings rather than marking up to catalog pricing and pocketing the spread."</td></tr>
+          <tr><td>3</td><td>What's your process when a BOM line is out of stock at all your authorized distributors?</td><td>"We flag it within 24 hours of BOM review, provide a list of pin-compatible alternates with availability data, and don't proceed until you approve an alternate or confirm you'll wait."</td></tr>
+          <tr><td>4</td><td>Do you perform incoming inspection on every component lot — or sample-based?</td><td>"Visual inspection on 100% of incoming lots. X-ray and solderability on a per-lot sample basis for standard parts, 100% X-ray for BGAs and high-value ICs from any channel other than manufacturer-direct."</td></tr>
+          <tr><td>5</td><td>What's your markup on components?</td><td>"5–12% for turnkey assembly, covering sourcing labor, inventory carrying cost, and our warranty on supplied parts. We share the distributor invoice on request — you can see exactly what we paid."</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The Sourcing Strategy That Compounds Over Time</h2>
+      <p>A well-executed component sourcing strategy is cumulative. Every BOM optimization — one fewer resistor value, one alternate part identified before an allocation event hits — reduces future procurement friction. Every production run with zero counterfeit incidents builds a procurement data set (lead time histories, pricing trends, alternate availability) that makes the next run more predictable.</p>
+      <p>This is the structural advantage of working with a single manufacturing partner across multiple production runs: they learn your BOM, they understand which parts are price-sensitive and which are lead-time-sensitive, and they build the distributor relationships that give your program priority when components are on allocation. The <a href="../blog/post-7.html">partner evaluation checklist</a> is the starting point — but the procurement infrastructure they bring to your program is what compounds over the life of your product.</p>
+      <p>For a specific quote on your BOM — including a line-by-line component cost analysis with distributor tier pricing and lead time assessment — <a href="../blog/post-4.html">our turnaround team</a> reviews incoming BOMs within 24 hours and provides a transparent cost breakdown before any commitment.</p>
+    </div>
+
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div><h2 class="cta-band-title">Get a BOM cost analysis with your assembly quote</h2><p class="cta-band-lead">Send us your BOM and Gerber files. You'll receive a line-by-line component cost breakdown with distributor tier pricing, lead time assessment for every BOM line, and a complete assembly quote — all within 24 hours.</p></div>
+        <div class="cta-band-actions" style="align-items:center;"><a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Submit Your BOM for Analysis</a><a href="../contact.html" class="cta-secondary-link-post">Schedule a Call</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container"><div class="footer-grid">
+      <div class="footer-col"><h4>Uppcba</h4><p>Precision PCB assembly for prototype through mid-volume production. ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../products.html">Products</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../products/smt.html">SMT Assembly</a></li><li><a href="../products/dip.html">DIP Assembly</a></li><li><a href="../products/mixed.html">Mixed Assembly</a></li><li><a href="../products.html">Box Build</a></li><li><a href="../about.html">DFM Review</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>Email: inquiry@uppcba.com<br>Phone: +86 (755) 8xxx-xxxx<br><br>Shenzhen, Guangdong<br>China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Uppcba. All rights reserved.</span><span>Built with precision.</span></div></div>
+  </footer>
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form onsubmit="return handleInquiry(event)" novalidate>
+          <div class="form-group"><label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label><input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label><input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label" for="inq-company">Company</label><input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name"></div>
+          <div class="form-group"><label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label><textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../inquiry-handler.js"></script>
+  <script src="../reveal.js"></script>
+</body>
+</html>
