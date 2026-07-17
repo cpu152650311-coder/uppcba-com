@@ -1,0 +1,12 @@
+# llms.txt — uppcba.com
+> PCB assembly & manufacturing for global B2B. One-stop electronics manufacturing services.
+
+## Core Pages
+- [Home](https://uppcba.com/): PCB assembly and manufacturing services
+- [Blog](https://uppcba.com/blog): Technical guides and industry insights
+- [Contact](https://uppcba.com/contact): Quote request
+
+## Key Facts
+- Services: PCB assembly (SMT/TH), PCB fabrication, component sourcing
+- Certification: ISO 9001
+- Industries: Consumer electronics, industrial, medical, automotive

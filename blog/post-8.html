@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENIG vs HASL vs OSP vs ENEPIG: Which PCB Surface Finish for Your Application — Uppcba Blog</title>
+  <meta name="description" content="A practical comparison of 4 PCB surface finishes — ENIG, HASL, OSP, and ENEPIG — covering cost, shelf life, solderability, flatness, and application fit. Includes a selection matrix for procurement and engineering teams.">
+  <link rel="canonical" href="https://uppcba.com/blog/post-8.html">
+  <meta property="og:title" content="ENIG vs HASL vs OSP vs ENEPIG: Which PCB Surface Finish for Your Application — Uppcba Blog">
+  <meta property="og:description" content="ENIG vs HASL vs OSP vs ENEPIG comparison: cost, shelf life, solderability, flatness, and application fit. Selection matrix for procurement and engineering teams.">
+  <meta property="og:image" content="https://uppcba.com/generated/blog-finishes-cover.webp">
+  <meta property="og:url" content="https://uppcba.com/blog/post-8.html">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    .article-cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--copper);margin-bottom:var(--sp-2)}
+    .related-heading{font-family:var(--font-display);font-weight:400;font-size:var(--text-h4);color:var(--text-primary);margin-bottom:var(--sp-4)}
+    .card-img-wrap{position:relative;overflow:hidden}
+    .card-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+    .card-cat-pill{position:absolute;top:var(--sp-2);left:var(--sp-2);display:inline-block;padding:.25em .65em;font-size:var(--text-xs);font-weight:600;background:var(--copper);color:#fff;border-radius:var(--radius-sm);text-transform:uppercase;letter-spacing:var(--ls-label)}
+    .card-date{font-size:var(--text-xs);color:var(--text-secondary);margin-bottom:var(--sp-1)}
+    .card-excerpt{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2)}
+    .card-link{display:inline-flex;align-items:center;gap:.25rem;font-size:var(--text-sm);font-weight:600;color:var(--copper);text-decoration:none;transition:color var(--transition-fast)}
+    .card-link:hover{color:var(--copper-hover)}
+    .article-illustration{border-radius:var(--radius-sm);margin-block:var(--sp-5);border:1px solid var(--border-default)}
+    .cta-secondary-link-post{display:inline-flex;align-items:center;color:var(--text-on-dark);font-size:var(--text-sm);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,236,242,0.4);transition:color var(--transition-fast),text-decoration-color var(--transition-fast)}
+    .cta-secondary-link-post:hover{color:var(--copper-hover);text-decoration-color:var(--copper-hover)}
+    .checklist-table{width:100%;border-collapse:collapse;margin-block:var(--sp-4);font-size:var(--text-sm)}
+    .checklist-table th{text-align:left;padding:var(--sp-2) var(--sp-3);background:var(--copper-light);color:var(--text-primary);font-weight:600;border-bottom:2px solid var(--copper)}
+    .checklist-table td{padding:var(--sp-2) var(--sp-3);border-bottom:1px solid var(--border-default);color:var(--text-secondary);line-height:var(--lh-relaxed)}
+    .finish-card{background:var(--surface-gray);border-left:4px solid var(--copper);padding:var(--sp-4);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-block:var(--sp-4)}
+    .finish-card h3{font-family:var(--font-display);font-weight:400;color:var(--text-primary);margin-bottom:var(--sp-2)}
+    .finish-card p,.finish-card ul{color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:0}
+    .finish-card li{margin-bottom:var(--sp-1)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "ENIG vs HASL vs OSP vs ENEPIG: Which PCB Surface Finish for Your Application",
+    "description": "A practical comparison of 4 PCB surface finishes covering cost, shelf life, solderability, flatness, and application fit. Selection matrix for procurement and engineering teams.",
+    "image": "https://uppcba.com/generated/blog-finishes-cover.webp",
+    "datePublished": "2026-07-16",
+    "author": {"@type": "Organization", "name": "Uppcba"}
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home"><span class="nav-logo-text">Uppcba</span></a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a><a href="../about.html">About</a>
+        <div class="nav-dropdown"><a href="../products.html" class="nav-dropdown-toggle">Products</a><div class="nav-dropdown-menu"><a href="../products/smt.html">SMT Assembly</a><a href="../products/dip.html">DIP Assembly</a><a href="../products/mixed.html">Mixed Assembly</a></div></div>
+        <a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main>
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <img src="/generated/blog-finishes-cover.webp" alt="Abstract cross-section of four PCB pads with different surface finishes — gold ENIG, silver HASL, organic OSP, and dual-layer ENEPIG — navy and copper industrial tones" class="article-illustration" style="width:100%;max-width:720px;height:auto;border-radius:var(--radius-sm);margin-bottom:var(--sp-4);" data-img-role="content">
+        <span class="article-category">Materials & Processes</span>
+        <h1>ENIG vs HASL vs OSP vs ENEPIG: Which PCB Surface Finish for Your Application</h1>
+        <div class="article-meta">July 16, 2026 &middot; 9 min read</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Every PCB fabrication order asks the same question: which surface finish? It's a deceptively simple choice that cascades through cost, assembly yield, shelf life, and long-term reliability. Pick the wrong finish and you might discover the problem 6 months later when boards stored in inventory refuse to solder — or 2 years later when ENIG black pad failures start appearing in the field.</p>
+      <p>The surface finish serves three jobs on every PCB pad: it protects the copper from oxidation before assembly, it provides a solderable surface for component attachment, and it influences the mechanical and electrical properties of the finished solder joint. A finish that excels at one of these jobs may be mediocre at the others — there is no universal "best" finish, only the right finish for your specific combination of component types, storage conditions, reliability requirements, and budget.</p>
+      <p>This guide compares the four most common PCB surface finishes — HASL, OSP, ENIG, and ENEPIG — across the dimensions that matter for procurement and engineering decisions: cost per square meter, flatness for fine-pitch components, shelf life in storage, solder joint reliability, and application fit. At Uppcba, we process all four finishes across our 6 SMT lines, and the data below draws from production experience across thousands of customer designs.</p>
+
+      <h2>The Four Finishes at a Glance</h2>
+      <table class="checklist-table">
+        <thead><tr><th>Property</th><th>HASL (Lead-Free)</th><th>OSP</th><th>ENIG</th><th>ENEPIG</th></tr></thead>
+        <tbody>
+          <tr><td>Typical thickness</td><td>1–40 μm (uneven)</td><td>0.2–0.5 μm</td><td>Au: 0.05–0.12 μm<br>Ni: 3–6 μm</td><td>Au: 0.05–0.12 μm<br>Pd: 0.05–0.15 μm<br>Ni: 3–6 μm</td></tr>
+          <tr><td>Flatness (coplanarity)</td><td>Poor — dome-shaped</td><td>Excellent — angstrom-level</td><td>Excellent — sub-micron</td><td>Excellent — sub-micron</td></tr>
+          <tr><td>Shelf life</td><td>12+ months</td><td>3–6 months</td><td>12+ months</td><td>12+ months</td></tr>
+          <tr><td>Cost (relative)</td><td>1× (baseline)</td><td>1.1–1.3×</td><td>2.5–4×</td><td>3.5–5×</td></tr>
+          <tr><td>Multiple reflow cycles</td><td>Good (but warping risk)</td><td>Poor — degrades after 1st pass</td><td>Excellent — 3+ passes</td><td>Excellent — 3+ passes</td></tr>
+          <tr><td>Wire bondable</td><td>No</td><td>No</td><td>Yes (Al wire)</td><td>Yes (Al + Au wire)</td></tr>
+          <tr><td>RoHS compliant</td><td>Yes (lead-free variant)</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/generated/blog-finishes-cross-section.webp" alt="Technical cross-section diagram comparing the layer structure of HASL, OSP, ENIG, and ENEPIG finishes on a copper pad — showing Ni, Pd, Au layers to scale" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>HASL (Hot Air Solder Leveling): The Workhorse</h2>
+      <p>HASL is the most widely used surface finish in PCB fabrication, and for good reason: it's the cheapest option, it's compatible with virtually all assembly processes, and it provides the longest shelf life of any finish — boards can sit in storage for over a year and still solder perfectly. The process dips the fabricated PCB into molten solder (tin-copper or tin-silver-copper for lead-free), then uses hot air knives to blow excess solder off the pads, leaving a solder-coated surface.</p>
+      <p><strong>The flatness problem</strong> is HASL's primary limitation. The hot air leveling process cannot produce a perfectly flat surface — pads end up with a characteristic dome shape, with the solder thicker in the center and thinner at the edges. For 0603 passives, SOIC packages, and through-hole components, this dome is invisible to the assembly process. For 0.5 mm pitch QFPs and 0.8 mm pitch BGAs, the uneven surface creates coplanarity issues: some pads make solid contact with the solder paste and component leads, while others barely touch. The result is inconsistent solder joint formation and increased defect rates on fine-pitch components.</p>
+      <p>As a rule of thumb, HASL is reliable down to approximately 0.65 mm pitch for QFP packages and 1.0 mm for BGA. Below these thresholds, the coplanarity variation exceeds what the solder paste deposit can compensate for, and yield drops measurably. For designs with 0201 passives or 0.5 mm pitch ICs, HASL should be replaced with a flat finish — OSP for cost-sensitive applications, or ENIG/ENEPIG when shelf life and multiple reflow cycles are required.</p>
+
+      <div class="finish-card">
+        <h3>When to choose HASL</h3>
+        <ul>
+          <li>Component pitch ≥ 0.65 mm (QFPs, SOICs, 0603+ passives)</li>
+          <li>Boards that may sit in inventory for 6+ months before assembly</li>
+          <li>Cost-sensitive consumer and industrial products</li>
+          <li>Through-hole-heavy designs where flatness is irrelevant</li>
+        </ul>
+      </div>
+
+      <img src="/generated/blog-finishes-hasl.webp" alt="Illustration comparing HASL dome-shaped pad surface against a perfectly flat ENIG surface, with a fine-pitch component leads showing the contact gap on the domed surface" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>OSP (Organic Solderability Preservative): Budget Flatness</h2>
+      <p>OSP applies a water-based organic compound to the copper pads that forms a thin (0.2–0.5 μm), transparent protective layer. Unlike HASL, OSP adds essentially zero thickness variation — the surface remains as flat as the bare copper pad beneath it. This makes OSP the budget choice for fine-pitch designs: you get ENIG-level flatness at roughly one-third of the cost.</p>
+      <p><strong>The shelf life trade-off</strong> is where OSP shows its limitations. The organic coating gradually degrades when exposed to humidity and elevated temperatures. In a controlled environment (20–25°C, <60% RH, sealed packaging), OSP-coated boards typically remain solderable for 3–6 months. In uncontrolled storage — a hot warehouse in Southeast Asia, for example — shelf life can drop below 3 months. After the OSP layer degrades, the exposed copper oxidizes, and the board requires either a bake-out and re-application or scrapping.</p>
+      <p><strong>Multiple reflow vulnerability</strong> is OSP's other major constraint. The first pass through reflow burns off the organic coating, leaving bare copper on the unsoldered pads. If your board requires a second reflow pass — common in double-sided SMT assemblies where the bottom side is assembled first, then the top side — those bottom-side pads have no protection between passes. The copper begins oxidizing immediately, and the second-pass solder joint quality depends on the flux in the solder paste being aggressive enough to clean the oxidized copper. For single-sided assemblies, this is a non-issue; for double-sided SMT, it adds process risk that can show up as intermittent wetting defects. For deeper guidance on preparing your design for SMT, see <a href="../blog/post-1.html">our DFM preparation guide</a>.</p>
+
+      <div class="finish-card">
+        <h3>When to choose OSP</h3>
+        <ul>
+          <li>Fine-pitch designs (≤0.5 mm QFP, &lt;1.0 mm BGA) on a budget</li>
+          <li>Single-sided SMT assemblies (no second reflow pass)</li>
+          <li>Boards that will be assembled within 3 months of fabrication</li>
+          <li>Controlled storage conditions available (sealed packaging, climate control)</li>
+        </ul>
+      </div>
+
+      <h2>ENIG (Electroless Nickel Immersion Gold): The Industry Standard for Reliability</h2>
+      <p>ENIG is the most widely specified flat surface finish for professional and high-reliability applications, and it earns its position through a rare combination of properties: excellent flatness, 12+ month shelf life, multiple reflow cycle tolerance, and good electrical contact performance. The process deposits a layer of electroless nickel (3–6 μm) directly onto the copper pad, followed by a thin immersion gold layer (0.05–0.12 μm) that protects the nickel from oxidation. At Uppcba, ENIG is the default finish we recommend for <a href="../blog/post-2.html">IPC Class 3 assemblies</a> unless a specific application requirement dictates otherwise.</p>
+      <p><strong>The cost reality</strong>: ENIG costs 2.5–4× more than HASL per square meter of board area. On a typical 100 × 100 mm board, the finish cost adder is roughly $1.50–$3.00 — modest in the context of a $30–$80 assembly bill. Where the cost becomes material is on large boards (200 × 200 mm or more), where the finish adder can reach $10–$15 per board. For high-volume consumer products, this difference matters. For medical devices, aerospace, and industrial control systems where a field failure costs orders of magnitude more than the finish premium, ENIG is the standard choice.</p>
+      <p><strong>Black pad syndrome</strong> is the failure mode that has given ENIG its one well-known vulnerability. Black pad occurs when the immersion gold plating process over-reacts with the nickel layer, creating a phosphorus-rich, brittle nickel-phosphide interface that fractures under mechanical or thermal stress. The solder joint appears to have wet properly — the solder ball sits on the pad — but the intermetallic bond is weak, and the joint separates at the Ni-P interface, leaving a characteristic dark gray or black fracture surface. Black pad is a process control problem at the PCB fabricator, not an inherent ENIG flaw. Reputable fabricators control immersion time, gold bath temperature, and pH within tight windows that prevent the over-reaction. When evaluating a PCB supplier, ask about their phosphorus content control in the nickel bath — it should be maintained at 6–9% by weight, verified by bath analysis at least once per shift.</p>
+
+      <div class="finish-card">
+        <h3>When to choose ENIG</h3>
+        <ul>
+          <li>Fine-pitch SMT: 0201 passives, 0.4–0.5 mm pitch BGAs, QFNs</li>
+          <li>Boards requiring 2+ reflow passes (double-sided SMT)</li>
+          <li>Long shelf life required (6+ months between fab and assembly)</li>
+          <li>IPC Class 3 / high-reliability applications (medical, aerospace, automotive)</li>
+          <li>Contact surfaces: keypad contacts, edge connectors, test points</li>
+        </ul>
+      </div>
+
+      <img src="/generated/blog-finishes-enig.webp" alt="Process flow diagram of ENIG plating — copper pad → microetch → nickel deposition → gold immersion → finished pad cross-section with labeled layer thicknesses" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>ENEPIG (Electroless Nickel Electroless Palladium Immersion Gold): When ENIG Isn't Enough</h2>
+      <p>ENEPIG adds a middle layer — electroless palladium (0.05–0.15 μm) — between the nickel and gold layers of ENIG. This palladium layer acts as a diffusion barrier that prevents the nickel from migrating into the gold during storage and thermal cycling, solving two ENIG limitations simultaneously: it eliminates the phosphorus enrichment that causes black pad, and it makes the surface wire-bondable with both aluminum and gold wire, whereas ENIG only supports aluminum wire bonding reliably.</p>
+      <p>The cost premium over ENIG is significant — roughly 40–60% more — because palladium is an expensive platinum-group metal and the process adds an extra plating step. On a per-board basis, ENEPIG adds $2–$5 over ENIG for a typical 100 × 100 mm board. This premium is hard to justify unless your application specifically needs wire bonding capability, ultra-long storage life (>2 years in uncontrolled conditions), or the absolute elimination of black pad risk in high-reliability applications where failure is not an option — implantable medical devices, satellite electronics, or downhole oil-and-gas instrumentation.</p>
+      <p>For the vast majority of PCB assembly applications — including medical devices at the system level, industrial controls, and automotive electronics — ENIG provides sufficient reliability margin. ENEPIG enters the conversation when your reliability engineer asks for it by name, which typically means they've experienced a black pad failure on a previous design or they're working to a specification (MIL-PRF-31032, NASA-STD-8739) that mandates nickel barrier integrity verification beyond standard ENIG process control.</p>
+
+      <div class="finish-card">
+        <h3>When to choose ENEPIG</h3>
+        <ul>
+          <li>Wire bonding required (Au or Al wire) — especially mixed wire bond + SMT designs</li>
+          <li>Absolute black pad elimination required (implantable medical, space-grade)</li>
+          <li>Extreme storage conditions: >2 years shelf life or uncontrolled tropical environment</li>
+          <li>High-temperature applications where Ni-Au intermetallic growth is a concern</li>
+        </ul>
+      </div>
+
+      <h2>Selection Matrix: Match the Finish to Your Application</h2>
+      <table class="checklist-table">
+        <thead><tr><th>Application</th><th>Recommended Finish</th><th>Acceptable Alternative</th><th>Avoid</th></tr></thead>
+        <tbody>
+          <tr><td>Consumer electronics, ≥0603, single-sided</td><td>HASL</td><td>OSP</td><td>ENEPIG (overkill)</td></tr>
+          <tr><td>Consumer electronics, fine-pitch, double-sided</td><td>ENIG</td><td>OSP (if assembled within 3 months)</td><td>HASL (coplanarity issues)</td></tr>
+          <tr><td>Industrial controls, 5–10 year life</td><td>ENIG</td><td>—</td><td>OSP (shelf life risk on spares)</td></tr>
+          <tr><td>Medical devices, non-implantable</td><td>ENIG</td><td>—</td><td>HASL, OSP</td></tr>
+          <tr><td>Implantable medical, space-grade</td><td>ENEPIG</td><td>ENIG (with black pad process audit)</td><td>HASL, OSP</td></tr>
+          <tr><td>Automotive under-hood, -40 to +125°C</td><td>ENIG</td><td>ENEPIG</td><td>OSP (thermal degradation)</td></tr>
+          <tr><td>Prototype / proof-of-concept, fast turn</td><td>HASL</td><td>ENIG</td><td>ENEPIG (cost, lead time)</td></tr>
+          <tr><td>RF / microwave, controlled impedance</td><td>ENIG</td><td>OSP</td><td>HASL (uneven surface affects impedance)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How Surface Finish Affects DFM and Assembly Yield</h2>
+      <p>Your choice of surface finish interacts with several DFM decisions, and understanding these interactions prevents yield surprises at the assembly stage. Three specific interactions deserve attention:</p>
+      <p><strong>Stencil design and solder paste volume</strong>: HASL pads, because of their dome shape, effectively reduce the standoff height between the stencil and the pad surface. The stencil does not sit completely flat on a domed HASL pad — it contacts the center of the dome, leaving a small gap at the pad edges. This gap allows solder paste to bleed under the stencil at the pad perimeter, producing a slightly larger paste deposit than designed. For designs transitioning from HASL to ENIG, the paste volume should be re-verified — the same stencil aperture that produced good joints on HASL may under-deposit on perfectly flat ENIG pads because the gasketing effect of the dome is gone.</p>
+      <p><strong>Component placement force</strong>: Fine-pitch BGAs (0.5 mm and below) require a flat landing surface because the solder ball collapse height is only 200–300 μm. On a domed HASL pad, a BGA ball may contact the center of the dome before the perimeter balls make contact, creating uneven collapse and potential opens on the outer rows. ENIG and OSP eliminate this variable entirely, which is a major reason they're specified for fine-pitch BGA designs. Our <a href="../blog/post-1.html">DFM guide covers these interactions</a> in detail.</p>
+      <p><strong>ICT (in-circuit test) probe contact</strong>: Test pads and vias used as test points need a surface that makes reliable electrical contact with spring-loaded pogo pins. ENIG provides consistently low contact resistance because the gold surface does not oxidize. HASL test pads develop a thin oxide layer over time that can cause intermittent contact — particularly on boards tested weeks after assembly. If your test strategy includes ICT, specify ENIG at minimum on test pads, or budget for double-probing (two pins per net) on HASL boards.</p>
+
+      <img src="/generated/blog-finishes-comparison.webp" alt="Side-by-side visual comparison of the four surface finishes on identical PCB pads — color-coded with gold ENIG, silver HASL, green-tinted OSP, and dual-tone ENEPIG" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>Procurement Checklist: Questions to Ask Your PCB Fabricator</h2>
+      <p>When specifying a surface finish, the spec sheet tells you what the fabricator <em>aims</em> to produce. These five questions tell you what they actually control:</p>
+      <table class="checklist-table">
+        <thead><tr><th>#</th><th>Question</th><th>What to Look For</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>"What is your nickel bath phosphorus content and how often do you analyze it?"</td><td>6–9% P by weight; analyzed at minimum once per shift. Outside this range = black pad risk.</td></tr>
+          <tr><td>2</td><td>"Do you perform solderability testing on every batch, and to which standard?"</td><td>IPC J-STD-003, wetting balance or dip-and-look method. Certificate should reference the standard.</td></tr>
+          <tr><td>3</td><td>"What is your maximum time between OSP application and vacuum packaging?"</td><td>Under 2 hours. OSP begins degrading on exposure to ambient humidity.</td></tr>
+          <tr><td>4</td><td>"Can you provide XRF thickness measurements for the Au, Pd, and Ni layers?"</td><td>XRF report should show all layer thicknesses within spec. Au below 0.03 μm = porosity and oxidation risk.</td></tr>
+          <tr><td>5</td><td>"Do you have experience with [your specific finish] on [your layer count and thickness]?"</td><td>Specific, not generic. A fabricator who's done ENIG on 2-layer 1.6 mm may not have the thermal management for ENIG on 12-layer 2.4 mm.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The Bottom Line: Pick for Your Hardest Component, Not Your Average</h2>
+      <p>The most common surface finish mistake we see at Uppcba is choosing based on the majority of components rather than the most demanding one. A board with 200 0603 resistors and one 0.5 mm pitch BGA should be specified for the BGA, not the resistors. Saving $2/board on HASL for the 200 easy components and then fighting BGA coplanarity defects at 2% yield loss on every production run is a false economy that the procurement spreadsheet won't show you — but the rework station operator will.</p>
+      <p>When you're ready to specify a surface finish for your next design, <a href="../blog/post-7.html">the same evaluation framework you use for choosing an assembly partner</a> applies here: define your hardest requirement first (finest pitch, most reflow cycles, longest shelf life, highest reliability standard), then select the least expensive finish that satisfies it. This approach, consistently applied, produces better assembly outcomes than optimizing for cost alone — a principle that <a href="../blog/post-3.html">holds true across every manufacturing decision</a> in PCB assembly.</p>
+      <p>Surface finish is one of several material choices that affect your <a href="../blog/post-4.html">assembly lead time</a> — ENIG and ENEPIG add 1–2 days to PCB fabrication compared to HASL, which matters when you're working to a tight schedule. Factor this into your planning timeline from the start rather than discovering it after the PCB order is placed.</p>
+    </div>
+
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div><h2 class="cta-band-title">Not sure which surface finish is right for your board?</h2><p class="cta-band-lead">Send us your Gerber files and our engineering team will recommend the optimal finish based on your component types, pitch, and reliability requirements — included in every quote at no extra cost.</p></div>
+        <div class="cta-band-actions" style="align-items:center;"><a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Get Finish Recommendation</a><a href="../contact.html" class="cta-secondary-link-post">Talk to an Engineer</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container"><div class="footer-grid">
+      <div class="footer-col"><h4>Uppcba</h4><p>Precision PCB assembly for prototype through mid-volume production. ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../products.html">Products</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../products/smt.html">SMT Assembly</a></li><li><a href="../products/dip.html">DIP Assembly</a></li><li><a href="../products/mixed.html">Mixed Assembly</a></li><li><a href="../products.html">Box Build</a></li><li><a href="../about.html">DFM Review</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>Email: inquiry@uppcba.com<br>Phone: +86 (755) 8xxx-xxxx<br><br>Shenzhen, Guangdong<br>China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Uppcba. All rights reserved.</span><span>Built with precision.</span></div></div>
+  </footer>
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form onsubmit="return handleInquiry(event)" novalidate>
+          <div class="form-group"><label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label><input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label><input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label" for="inq-company">Company</label><input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name"></div>
+          <div class="form-group"><label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label><textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../inquiry-handler.js"></script>
+  <script src="../reveal.js"></script>
+</body>
+</html>
