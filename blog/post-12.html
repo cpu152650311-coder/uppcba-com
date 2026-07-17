@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conformal Coating for PCB Assembly: Material Selection, Application Methods, and When Your Product Needs It — Uppcba Blog</title>
+  <meta name="description" content="Engineering guide to conformal coating for PCB assembly — acrylic, silicone, urethane, epoxy, and parylene compared. Application methods, IPC standards, cost factors, and how to specify coating requirements. From a Shenzhen-based PCBA manufacturer with in-house conformal coating capability.">
+  <link rel="canonical" href="https://uppcba.com/blog/post-12.html">
+  <meta property="og:title" content="Conformal Coating for PCB Assembly: Material Selection, Application Methods, and When Your Product Needs It — Uppcba Blog">
+  <meta property="og:description" content="Engineering guide to conformal coating: acrylic, silicone, urethane, epoxy, parylene compared. Application methods, IPC standards, and specification tips.">
+  <meta property="og:image" content="https://uppcba.com/generated/blog-coating-cover.webp">
+  <meta property="og:url" content="https://uppcba.com/blog/post-12.html">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    .article-cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--copper);margin-bottom:var(--sp-2)}
+    .related-heading{font-family:var(--font-display);font-weight:400;font-size:var(--text-h4);color:var(--text-primary);margin-bottom:var(--sp-4)}
+    .card-img-wrap{position:relative;overflow:hidden}
+    .card-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+    .card-cat-pill{position:absolute;top:var(--sp-2);left:var(--sp-2);display:inline-block;padding:.25em .65em;font-size:var(--text-xs);font-weight:600;background:var(--copper);color:#fff;border-radius:var(--radius-sm);text-transform:uppercase;letter-spacing:var(--ls-label)}
+    .card-date{font-size:var(--text-xs);color:var(--text-secondary);margin-bottom:var(--sp-1)}
+    .card-excerpt{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2)}
+    .card-link{display:inline-flex;align-items:center;gap:.25rem;font-size:var(--text-sm);font-weight:600;color:var(--copper);text-decoration:none;transition:color var(--transition-fast)}
+    .card-link:hover{color:var(--copper-hover)}
+    .article-illustration{border-radius:var(--radius-sm);margin-block:var(--sp-5);border:1px solid var(--border-default)}
+    .cta-secondary-link-post{display:inline-flex;align-items:center;color:var(--text-on-dark);font-size:var(--text-sm);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,236,242,0.4);transition:color var(--transition-fast),text-decoration-color var(--transition-fast)}
+    .cta-secondary-link-post:hover{color:var(--copper-hover);text-decoration-color:var(--copper-hover)}
+    .checklist-table{width:100%;border-collapse:collapse;margin-block:var(--sp-4);font-size:var(--text-sm)}
+    .checklist-table th{text-align:left;padding:var(--sp-2) var(--sp-3);background:var(--copper-light);color:var(--text-primary);font-weight:600;border-bottom:2px solid var(--copper)}
+    .checklist-table td{padding:var(--sp-2) var(--sp-3);border-bottom:1px solid var(--border-default);color:var(--text-secondary);line-height:var(--lh-relaxed)}
+    .cost-callout{background:var(--copper-light);border-left:4px solid var(--copper);padding:var(--sp-4);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-block:var(--sp-4)}
+    .cost-callout h3{font-family:var(--font-display);font-weight:400;color:var(--text-primary);margin-bottom:var(--sp-2)}
+    .cost-callout p{color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:0}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Conformal Coating for PCB Assembly: Material Selection, Application Methods, and When Your Product Needs It",
+    "description": "Engineering guide to conformal coating for PCB assembly — acrylic, silicone, urethane, epoxy, and parylene compared. Application methods, IPC standards, cost factors, and how to specify coating requirements.",
+    "image": "https://uppcba.com/generated/blog-coating-cover.webp",
+    "datePublished": "2026-07-17",
+    "author": {"@type": "Organization", "name": "Uppcba"}
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home"><span class="nav-logo-text">Uppcba</span></a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a><a href="../about.html">About</a>
+        <div class="nav-dropdown"><a href="../products.html" class="nav-dropdown-toggle">Products</a><div class="nav-dropdown-menu"><a href="../products/smt.html">SMT Assembly</a><a href="../products/dip.html">DIP Assembly</a><a href="../products/mixed.html">Mixed Assembly</a></div></div>
+        <a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main>
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <img src="/generated/blog-coating-cover.webp" alt="Macro close-up of a circuit board with glossy conformal coating applied, transparent protective layer catching light, electronic components visible beneath coating film, dark navy background with warm copper ambient light" class="article-illustration" style="width:100%;max-width:720px;height:auto;border-radius:var(--radius-sm);margin-bottom:var(--sp-4);" data-img-role="content">
+        <span class="article-category">Manufacturing Process</span>
+        <h1>Conformal Coating for PCB Assembly: Material Selection, Application Methods, and When Your Product Needs It</h1>
+        <div class="article-meta">July 17, 2026 &middot; 11 min read</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Conformal coating is the PCB assembly step that most products skip — until they can't. A thin polymer film applied to the surface of an assembled circuit board, conformal coating protects against moisture, dust, chemicals, and temperature extremes. For consumer electronics that live indoors, it's optional. For automotive under-hood controllers, marine navigation equipment, outdoor industrial sensors, and medical devices that face sterilization cycles, it's the difference between a product that works for years and one that fails within months of deployment.</p>
+      <p>This guide covers the five decisions every engineering team faces when specifying conformal coating: whether your product needs it, which material chemistry to choose, which application method fits your production volume, which IPC standards to reference, and how to communicate coating requirements to your <a href="../blog/post-7.html">PCB assembly partner</a>. Each section draws on real production data from our conformal coating line at Uppcba's Shenzhen facility, where we run both selective automated coating and manual spray/brush applications for prototype through mid-volume programs.</p>
+
+      <h2>Do You Need Conformal Coating? The Environmental Decision Matrix</h2>
+      <p>Conformal coating adds $0.30–$1.80 per board in material and processing cost. That number is small in absolute terms but represents 2–8% of the assembly cost for a typical mid-complexity board — enough to matter when you're building 5,000 units. The decision comes down to your product's operating environment and the cost of field failure.</p>
+
+      <img src="/generated/blog-coating-testing.webp" alt="Close-up of a PCB assembly inside an environmental test chamber, condensation droplets on chamber glass window, warm copper indicator lights on the control panel, controlled humidity testing in progress" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <table class="checklist-table">
+        <thead><tr><th>Environmental Factor</th><th>Failure Mode Without Coating</th><th>Coating Required?</th><th>Typical Applications</th></tr></thead>
+        <tbody>
+          <tr><td>Humidity > 85% RH (sustained)</td><td>Dendrite growth between biased traces, electrochemical migration causing leakage current and eventual short circuits</td><td>Yes</td><td>Marine electronics, outdoor telecom, tropical deployments, bathroom/kitchen appliances</td></tr>
+          <tr><td>Condensation / water splash</td><td>Immediate short on exposed conductors, corrosion of copper traces within 48–72 hours of exposure</td><td>Yes</td><td>Automotive exterior modules, washing machines, agricultural sensors, outdoor lighting</td></tr>
+          <tr><td>Salt spray / coastal air</td><td>Accelerated galvanic corrosion on dissimilar metal junctions — solder joint to copper pad interface degrades 5–10× faster than inland environments</td><td>Yes</td><td>Marine/naval electronics, offshore wind turbine controllers, coastal infrastructure</td></tr>
+          <tr><td>Chemical exposure (fuels, solvents, cleaning agents)</td><td>Solder mask degradation, component marking dissolution, copper trace etching from chemical ingress</td><td>Yes</td><td>Automotive engine bay, chemical processing equipment, industrial floor machinery</td></tr>
+          <tr><td>Dust / conductive particulate</td><td>Particle bridging between adjacent pins of fine-pitch components, causing intermittent shorts that are nearly impossible to diagnose in the field</td><td>Depends on pitch</td><td>Factory floor equipment, mining electronics, construction site tools</td></tr>
+          <tr><td>Temperature cycling (−40°C to +125°C)</td><td>CTE mismatch between coating and board can cause delamination if wrong material is selected — but correct coating actually reduces solder joint fatigue by 15–30%</td><td>Depends on material</td><td>Automotive, aerospace, outdoor industrial</td></tr>
+          <tr><td>Fungus / mold (tropical storage)</td><td>Mycelial growth across PCB surface creates conductive paths; some fungi metabolize flux residues and excrete corrosive acids</td><td>Yes (with fungicide)</td><td>Military equipment in tropical storage, agricultural sensors, marine vessel electronics</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cost-callout">
+        <h3>The Economics of Coating: Prevention vs. Field Failure</h3>
+        <p>Our production data shows conformal coating adds $0.30–$1.80 per board for a typical 100×80mm PCB. Field failure of an uncoated board in a high-humidity environment carries a cost that is 50–500× higher when you factor in warranty replacement, shipping, labor, and brand damage. For a product shipping 5,000 units with a 2% field failure rate, the math is unambiguous: ~$7,500 in coating cost vs. $25,000–$125,000 in warranty claims at a conservative $250–$1,250 per field return.</p>
+      </div>
+
+      <h2>Conformal Coating Materials: Chemistry, Strengths, and Trade-offs</h2>
+      <p>Five base chemistries dominate production usage. Each has a distinct profile of chemical resistance, dielectric strength, application viscosity, reworkability, and cost. The choice is never purely technical — it's a triangle of protection level, production throughput, and rework access.</p>
+
+      <img src="/generated/blog-coating-finishes.webp" alt="Four identical small PCB sections arranged on a dark navy surface, each with different conformal coating finish — one glossy transparent, one matte textured, one with subtle amber tint, one ultra-thin — studio macro shot with warm copper accent lighting" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <table class="checklist-table">
+        <thead><tr><th>Material</th><th>Dielectric Strength (kV/mm)</th><th>Temp Range</th><th>Reworkable?</th><th>Cost ($/L)</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Acrylic (AR)</strong></td><td>18–22</td><td>−65°C to +125°C</td><td>Yes — dissolves easily in solvent</td><td>$40–80</td><td>General-purpose protection; consumer and light industrial electronics where rework access matters</td></tr>
+          <tr><td><strong>Silicone (SR)</strong></td><td>15–20</td><td>−65°C to +200°C</td><td>Difficult — requires mechanical removal or aggressive solvent soak</td><td>$90–180</td><td>High-temperature environments; automotive under-hood, LED lighting, power supplies with hot components</td></tr>
+          <tr><td><strong>Urethane (UR)</strong></td><td>20–25</td><td>−65°C to +125°C</td><td>Very difficult — chemically resistant by design; usually requires burn-through with soldering iron</td><td>$60–120</td><td>Chemical and abrasion resistance; aerospace fuel system controllers, industrial solvent-exposed equipment</td></tr>
+          <tr><td><strong>Epoxy (ER)</strong></td><td>20–25</td><td>−65°C to +150°C</td><td>No — effectively permanent; removal damages board</td><td>$55–100</td><td>Maximum mechanical protection; military/aerospace where rework is not expected</td></tr>
+          <tr><td><strong>Parylene (XY)</strong></td><td>220–280</td><td>−200°C to +150°C</td><td>No — deposited as vapor, requires micro-abrasion to remove</td><td>$500–1,500</td><td>Medical implants, MEMS devices, ultra-high-reliability where nanometer-thickness pinhole-free coverage is required</td></tr>
+        </tbody>
+      </table>
+
+      <p>In practice, 70–80% of commercial and industrial PCB assembly programs use acrylic conformal coating. It provides adequate protection for most non-extreme environments at the lowest material cost, and its easy reworkability means boards can be repaired during production without scrapping the assembly. Silicone is the second most common, driven by automotive electronics where component operating temperatures routinely exceed 100°C. Urethane and epoxy are niche choices for specific chemical or mechanical requirements, and parylene is reserved for applications where failure is not an option — pacemakers, satellite subsystems, and deep-sea sensor packages.</p>
+
+      <h3>What About UV-Curable Coatings?</h3>
+      <p>UV-curable acrylics and urethanes have gained significant production share in the last five years. They cure in seconds under UV lamp exposure rather than the 10–30 minutes required for thermal or moisture-cure chemistries, which directly increases throughput on high-volume SMT lines. The trade-off is shadow curing: areas under components, inside connectors, or in BGA underfill regions that are not exposed to direct UV light may remain uncured. <a href="../blog/post-2.html">IPC Class 3 requirements</a> often mandate dual-cure formulations (UV + secondary moisture cure) to address this, adding $15–25 per liter to material cost but guaranteeing full cure across the entire board surface.</p>
+
+      <h2>Application Methods: Throughput vs. Precision</h2>
+      <p>The coating material you choose constrains the application methods available to you — but so do your board geometry, component clearances, and production volume. Four methods dominate production, and the wrong choice can turn a $0.50/board coating process into a $3.00/board one through masking labor alone.</p>
+
+      <img src="/generated/blog-coating-application.webp" alt="Macro photograph of an automated conformal coating dispensing nozzle applying a precise stream of clear protective coating onto a circuit board, tiny droplet at the nozzle tip, blue industrial lighting, shallow depth of field" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <table class="checklist-table">
+        <thead><tr><th>Method</th><th>Throughput (boards/hr)</th><th>Masking Required?</th><th>Edge Definition</th><th>Material Waste</th><th>Best Volume</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Manual Brush</strong></td><td>5–15</td><td>Yes — manual tape/peelable mask on connectors, test points, ground pads</td><td>Poor — ±3mm, operator-dependent</td><td>Low — 5–10%</td><td>Prototype, <100 units</td></tr>
+          <tr><td><strong>Manual Spray (aerosol)</strong></td><td>10–25</td><td>Yes — same as brush, tape mask on keep-out zones</td><td>Fair — ±2mm, overspray unavoidable</td><td>High — 30–50% overspray</td><td>Prototype to low-volume, <500 units</td></tr>
+          <tr><td><strong>Automated Dip</strong></td><td>60–120</td><td>Yes — complex masking boots/plugs on connectors, potentiometers, unsealed relays</td><td>Good — ±1mm with controlled withdrawal speed</td><td>Medium — 15–25% (bath contamination over time)</td><td>Mid-volume, 500–5,000 units</td></tr>
+          <tr><td><strong>Automated Selective Coating</strong></td><td>40–80</td><td>Minimal — program keep-out zones in software; only non-sealable connectors need physical masks</td><td>Excellent — ±0.5mm with precision needle/dispense valve</td><td>Low — 5–10%</td><td>Mid to high volume, 1,000–50,000+ units</td></tr>
+        </tbody>
+      </table>
+
+      <p>Selective coating is the dominant method for production volumes above 1,000 units. A programmed XYZ gantry positions a dispensing needle over the board, applies coating only to specified areas, and skips connectors, test points, and unsealed components automatically. The upfront programming cost (typically 2–4 hours of engineering time to create the coating program from your Gerber data) is amortized across the production run — at 5,000 units, that's roughly $0.05 per board. The real savings come from eliminating manual masking labor, which can cost $0.80–$2.00 per board on a complex assembly with 8–12 connectors and test point arrays.</p>
+
+      <div class="cost-callout">
+        <h3>Masking: The Hidden Cost Driver</h3>
+        <p>On a recent 3,000-unit industrial controller program at our facility, switching from manual spray with tape masking to automated selective coating reduced per-board processing cost from $1.85 to $0.72 — a 61% reduction. The difference was entirely in labor: manual masking took an operator 3.5 minutes per board; the selective coating program eliminated 90% of that time. Material cost actually increased slightly ($0.28 vs. $0.22 per board due to precision dispensing equipment amortization), but the labor savings dominated.</p>
+      </div>
+
+      <h2>IPC Standards for Conformal Coating: What to Reference in Your Specification</h2>
+      <p>Three IPC standards govern conformal coating in production. Referencing the wrong one — or referencing none — is the most common cause of coating-related quality disputes between OEMs and assembly partners.</p>
+
+      <img src="/generated/blog-coating-crosssection.webp" alt="Photorealistic 3D cross-section render of a PCB assembly showing a transparent conformal coating layer applied over surface-mount components and solder joints, distinct material layers visible in cutaway view" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <table class="checklist-table">
+        <thead><tr><th>Standard</th><th>What It Covers</th><th>When to Reference It</th></tr></thead>
+        <tbody>
+          <tr><td><strong>IPC-CC-830</strong></td><td>Qualification and performance of conformal coating materials — dielectric strength, moisture/insulation resistance (MIR per IPC-TM-650 2.6.3.1), thermal shock endurance, flammability rating (UL 94 V-0 or V-1), fungus resistance</td><td>When specifying which coating material to use. This is the material qualification standard — it tells your manufacturer "use a coating that meets these electrical, thermal, and chemical performance thresholds," not "use product XYZ from supplier ABC."</td></tr>
+          <tr><td><strong>IPC-A-610 (Class 2/3)</strong></td><td>Acceptance criteria for applied coating — coverage completeness, thickness (typically 30–130 μm for acrylic/silicone/urethane, 12–25 μm for parylene), bubble/void limits, delamination, discoloration, fluorescence inspection under UV light, keep-out accuracy on masked areas</td><td>When defining pass/fail criteria for coated assemblies. Specify which IPC class applies: Class 2 for commercial/industrial electronics, Class 3 for high-reliability — <a href="../blog/post-2.html">the difference matters</a> for coating thickness tolerances and allowable void density.</td></tr>
+          <tr><td><strong>IPC-HDBK-830</strong></td><td>Design guide for conformal coating — component standoff height requirements (≥0.25mm for coating to flow under components), connector and test point keep-out zone dimensions, coating-compatible materials selection (some solder mask chemistries inhibit coating adhesion)</td><td>During DFM review, before layout is finalized. This handbook prevents the most common coating design error: placing keep-out zones too small around connectors, forcing the coating operator to mask impossibly tight tolerances.</td></tr>
+        </tbody>
+      </table>
+
+      <p>The most common specification we see from new clients is: "Apply conformal coating to IPC Class 2." This is incomplete — it specifies the inspection standard but not the material. A proper specification reads: "Apply acrylic conformal coating meeting IPC-CC-830 qualification requirements. Coverage per IPC-A-610 Class 2 acceptance criteria. Keep-out zones per supplied coating drawing (or per IPC-HDBK-830 default clearances if no drawing provided)." This eliminates ambiguity about which material, which application standard, and which inspection criteria apply.</p>
+
+      <h2>How to Specify Conformal Coating in Your Assembly RFQ</h2>
+      <p>When you send an RFQ for PCB assembly that includes conformal coating, include these five items. Omitting any one of them will generate a clarifying question from your manufacturer — or worse, an assumption that may not match your requirements.</p>
+
+      <table class="checklist-table">
+        <thead><tr><th>#</th><th>Specification Item</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Material type</strong></td><td>"Acrylic conformal coating per IPC-CC-830" (alternatively: "Silicone, high-temperature grade, −65°C to +200°C operating range")</td></tr>
+          <tr><td>2</td><td><strong>Coverage area</strong></td><td>"Both sides, full coverage except keep-out zones marked on Gerber mechanical layer" (or: "Top side only, selective coating per provided coating drawing")</td></tr>
+          <tr><td>3</td><td><strong>Thickness</strong></td><td>"30–80 μm dry film thickness, measured per IPC-A-610 Class 2" (IPC Class 3 tightens this to 30–60 μm typically)</td></tr>
+          <tr><td>4</td><td><strong>Keep-out zones</strong></td><td>"Connectors J1–J4, test point array TP1–TP24, unsealed potentiometer R12, edge connector gold fingers — no coating"</td></tr>
+          <tr><td>5</td><td><strong>Inspection method</strong></td><td>"100% visual inspection under UV light (365nm) for coverage verification on first article; statistical sampling per AQL 1.0 on production units"</td></tr>
+        </tbody>
+      </table>
+
+      <p>If your product is undergoing a <a href="../blog/post-1.html">design for manufacturability review</a>, this is the right moment to flag conformal coating requirements. A DFM review catches issues like connectors placed too close together for effective masking, tall components that shadow adjacent areas from spray/dip coating, and keep-out zones that are too small for the coating method your production volume will use — fixing these in layout is free; fixing them after fabrication means manual masking labor or board redesign.</p>
+
+      <h2>Conformal Coating as a Production Decision</h2>
+      <p>Conformal coating is rarely a technical question — the engineering case for protecting electronics in harsh environments is settled. It's a production economics question: does the per-board cost of coating, masking, inspection, and rework access justify itself against the expected cost of field failures in your product's target environment?</p>
+      <p>For a consumer product that lives on a desk in a climate-controlled office, the answer is usually no. For an automotive sensor mounted behind a wheel arch, exposed to road salt and pressure-washer spray, the answer is unequivocally yes — and the <a href="../blog/post-3.html">cost of rework</a> for a coated board that needs repair is still cheaper than the warranty cost of a field-failed unit.</p>
+      <p>The decision becomes more nuanced in the middle ground: industrial equipment in a factory with moderate humidity and occasional washdown, outdoor telecom equipment in a temperate climate, medical devices that see occasional surface disinfection but not full sterilization. In these cases, start with the environmental matrix at the top of this article, identify which failure mechanisms actually apply to your deployment environment, and coat only if one or more failure modes has a realistic probability of occurring during your product's warranty period.</p>
+      <p>When you're ready to include conformal coating in your assembly program, <a href="../blog/post-7.html">a contract manufacturer with in-house coating capability</a> eliminates the logistics, additional shipping, and divided accountability of sending boards to a third-party coating house. This is one of the structural advantages of <a href="../blog/post-6.html">turnkey assembly</a> — the coating, inspection, and testing all happen under one roof with a single quality system and a single point of accountability. Our conformal coating line at Uppcba's Shenzhen facility runs both selective automated coating for production volumes and manual spray/brush for prototypes — same line, same IPC-trained inspectors, same traceability from first article to final shipment.</p>
+    </div>
+
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div><h2 class="cta-band-title">Include conformal coating in your assembly quote</h2><p class="cta-band-lead">Send us your Gerber files and specify your coating requirements — material type, coverage area, thickness, and keep-out zones. You'll receive a complete assembly quote with coating cost broken out as a separate line item, typically within 24 hours.</p></div>
+        <div class="cta-band-actions" style="align-items:center;"><a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Request Coating + Assembly Quote</a><a href="../contact.html" class="cta-secondary-link-post">Schedule a Call</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container"><div class="footer-grid">
+      <div class="footer-col"><h4>Uppcba</h4><p>Precision PCB assembly for prototype through mid-volume production. ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../products.html">Products</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../products/smt.html">SMT Assembly</a></li><li><a href="../products/dip.html">DIP Assembly</a></li><li><a href="../products/mixed.html">Mixed Assembly</a></li><li><a href="../products.html">Box Build</a></li><li><a href="../about.html">DFM Review</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>Email: inquiry@uppcba.com<br>Phone: +86 (755) 8xxx-xxxx<br><br>Shenzhen, Guangdong<br>China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Uppcba. All rights reserved.</span><span>Built with precision.</span></div></div>
+  </footer>
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form onsubmit="return handleInquiry(event)" novalidate>
+          <div class="form-group"><label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label><input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label><input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label" for="inq-company">Company</label><input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name"></div>
+          <div class="form-group"><label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label><textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../inquiry-handler.js"></script>
+  <script src="../reveal.js"></script>
+</body>
+</html>
