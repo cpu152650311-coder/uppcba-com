@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex & Rigid-Flex PCB Assembly: Design Considerations, Process Challenges & Supplier Selection — Uppcba Blog</title>
+  <meta name="description" content="A procurement and engineering guide to flex and rigid-flex PCB assembly: material selection (polyimide vs LCP), design rules, assembly process challenges, testing methods, and how to qualify a PCBA partner for flexible circuit manufacturing.">
+  <link rel="canonical" href="https://uppcba.com/blog/post-15.html">
+  <meta property="og:title" content="Flex & Rigid-Flex PCB Assembly: Design Considerations, Process Challenges & Supplier Selection — Uppcba Blog">
+  <meta property="og:description" content="Flex and rigid-flex PCB assembly guide: material options, design-for-manufacturability rules, assembly process challenges, inspection methods, and supplier qualification checklist for flexible circuit production.">
+  <meta property="og:image" content="https://uppcba.com/generated/blog-flex-cover.webp">
+  <meta property="og:url" content="https://uppcba.com/blog/post-15.html">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    .article-cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--copper);margin-bottom:var(--sp-2)}
+    .related-heading{font-family:var(--font-display);font-weight:400;font-size:var(--text-h4);color:var(--text-primary);margin-bottom:var(--sp-4)}
+    .card-img-wrap{position:relative;overflow:hidden}
+    .card-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+    .card-cat-pill{position:absolute;top:var(--sp-2);left:var(--sp-2);display:inline-block;padding:.25em .65em;font-size:var(--text-xs);font-weight:600;background:var(--copper);color:#fff;border-radius:var(--radius-sm);text-transform:uppercase;letter-spacing:var(--ls-label)}
+    .card-date{font-size:var(--text-xs);color:var(--text-secondary);margin-bottom:var(--sp-1)}
+    .card-excerpt{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2)}
+    .card-link{display:inline-flex;align-items:center;gap:.25rem;font-size:var(--text-sm);font-weight:600;color:var(--copper);text-decoration:none;transition:color var(--transition-fast)}
+    .card-link:hover{color:var(--copper-hover)}
+    .article-illustration{border-radius:var(--radius-sm);margin-block:var(--sp-5);border:1px solid var(--border-default)}
+    .cta-secondary-link-post{display:inline-flex;align-items:center;color:var(--text-on-dark);font-size:var(--text-sm);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,236,242,0.4);transition:color var(--transition-fast),text-decoration-color var(--transition-fast)}
+    .cta-secondary-link-post:hover{color:var(--copper-hover);text-decoration-color:var(--copper-hover)}
+    .checklist-table{width:100%;border-collapse:collapse;margin-block:var(--sp-4);font-size:var(--text-sm)}
+    .checklist-table th{text-align:left;padding:var(--sp-2) var(--sp-3);background:var(--copper-light);color:var(--text-primary);font-weight:600;border-bottom:2px solid var(--copper)}
+    .checklist-table td{padding:var(--sp-2) var(--sp-3);border-bottom:1px solid var(--border-default);color:var(--text-secondary);line-height:var(--lh-relaxed)}
+    .cost-callout{background:var(--copper-light);border-left:4px solid var(--copper);padding:var(--sp-4);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-block:var(--sp-4)}
+    .cost-callout h3{font-family:var(--font-display);font-weight:400;color:var(--text-primary);margin-bottom:var(--sp-2)}
+    .cost-callout p{color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:0}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Flex & Rigid-Flex PCB Assembly: Design Considerations, Process Challenges, and Supplier Selection",
+    "description": "A procurement and engineering guide to flex and rigid-flex PCB assembly covering material selection, design rules, assembly process challenges, inspection methods, and partner qualification.",
+    "image": "https://uppcba.com/generated/blog-flex-cover.webp",
+    "datePublished": "2026-07-18",
+    "author": {"@type": "Organization", "name": "Uppcba"}
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home"><span class="nav-logo-text">Uppcba</span></a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a><a href="../about.html">About</a>
+        <div class="nav-dropdown"><a href="../products.html" class="nav-dropdown-toggle">Products</a><div class="nav-dropdown-menu"><a href="../products/smt.html">SMT Assembly</a><a href="../products/dip.html">DIP Assembly</a><a href="../products/mixed.html">Mixed Assembly</a></div></div>
+        <a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main>
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <img src="/generated/blog-flex-cover.webp" alt="Photorealistic macro close-up of a flex PCB circuit bending gracefully with copper traces visible through translucent amber polyimide, studio lighting on dark navy surface, copper-toned highlights" class="article-illustration" style="width:100%;max-width:720px;height:auto;border-radius:var(--radius-sm);margin-bottom:var(--sp-4);" data-img-role="content">
+        <span class="article-category">Process Selection</span>
+        <h1>Flex & Rigid-Flex PCB Assembly: Design Considerations, Process Challenges, and Supplier Selection</h1>
+        <div class="article-meta">July 18, 2026 &middot; 10 min read</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Flexible printed circuits are not simply rigid PCBs made bendable — they are a fundamentally different substrate technology that changes how you design, assemble, and test your electronics. A rigid PCB can tolerate a 0.15 mm placement offset on an 0201 component without issue. A flex circuit under dynamic bending with the same offset will develop trace cracks within hundreds of cycles, not thousands. The assembly house you select for your rigid boards may not have the tooling, fixture design expertise, or process controls to handle flex circuits at production volumes.</p>
+      <p>This guide covers what procurement managers and design engineers need to know when transitioning from rigid to flex or rigid-flex PCB assembly: material options and their manufacturing implications, design rules that prevent assembly defects, the three process challenges unique to flex assembly, how inspection requirements change for flexible circuits, and a supplier qualification checklist. It draws on our experience assembling flexible and <a href="../products/mixed.html">mixed-technology PCBs</a> at our Shenzhen facility, where flex and rigid-flex now account for an increasing share of mid-volume production runs.</p>
+
+      <img src="/generated/blog-flex-material.webp" alt="Photorealistic side-by-side comparison of three flex PCB material samples on dark navy surface: amber polyimide, translucent LCP, and thin PET, each bent at different radius showing material flexibility characteristics, macro studio shot with copper accent reflections" class="article-illustration" style="width:100%;max-width:720px;height:auto;" data-img-role="content" loading="lazy">
+
+      <h2>Flex Circuit Materials: The Substrate Decision That Drives Everything</h2>
+      <p>Material choice in flex PCB manufacturing is not a "prefer this over that" decision — it is a constraint cascade. Your substrate selection determines your minimum bend radius, your maximum operating temperature, your assembly reflow profile, and your cost structure all at once.</p>
+
+      <table class="checklist-table">
+        <thead><tr><th>Property</th><th>Polyimide (Kapton)</th><th>LCP (Liquid Crystal Polymer)</th><th>PET (Polyester)</th></tr></thead>
+        <tbody>
+          <tr><td>Temperature rating</td><td>−200°C to +300°C</td><td>−40°C to +150°C</td><td>−40°C to +105°C</td></tr>
+          <tr><td>Moisture absorption</td><td>1.6–2.8%</td><td>0.02–0.04%</td><td>0.5–0.8%</td></tr>
+          <tr><td>Dielectric constant (Dk)</td><td>3.4–3.8 @ 1 GHz</td><td>2.9–3.1 @ 1 GHz</td><td>3.0–3.2 @ 1 MHz</td></tr>
+          <tr><td>Min bend radius (single-layer)</td><td>3–6× substrate thickness</td><td>2–4× substrate thickness</td><td>5–8× substrate thickness</td></tr>
+          <tr><td>Relative cost</td><td>Medium — industry standard</td><td>High — specialty applications</td><td>Low — consumer/one-time use</td></tr>
+          <tr><td>SMT reflow compatible</td><td>Yes (lead-free profiles)</td><td>Yes (with controlled ramp)</td><td>No — low-temperature only</td></tr>
+        </tbody>
+      </table>
+
+      <p>Polyimide is the workhorse substrate for 80%+ of flex and rigid-flex assemblies in industrial, medical, and automotive applications. It handles lead-free reflow temperatures (peak 245–250°C) without delamination, survives thousands of dynamic flex cycles when designed correctly, and has an established supply chain with predictable lead times. LCP is the choice for high-frequency applications — 5G antenna substrates, radar modules, millimeter-wave interconnects — where its near-zero moisture absorption and stable Dk across frequency make it worth the 2–3× material cost premium. PET finds its niche in disposable medical sensors, consumer wearables with 12-month product lives, and single-use diagnostic cartridges; it cannot survive reflow soldering and must be assembled with conductive adhesive or low-temperature solder.</p>
+
+      <div class="cost-callout">
+        <h3>Material Cost Reality Check</h3>
+        <p>A 4-layer rigid-flex board with polyimide flex layers and FR-4 rigid sections typically carries a raw material cost 2.5–4× higher than an equivalent all-rigid 4-layer board. The cost driver is not the polyimide itself — it is the yield loss from the more complex lamination process and the additional inspection steps that flexible substrates require. Budget for 85–90% first-pass yield on rigid-flex vs 95–97% on standard rigid boards, and build that into your cost model from day one.</p>
+      </div>
+
+      <img src="/generated/blog-flex-design.webp" alt="Photorealistic 3D cross-section render of a rigid-flex PCB transition zone showing FR-4 rigid section transitioning to amber polyimide flex layer with copper traces visible at the boundary, precision engineering aesthetic on dark surface" class="article-illustration" style="width:100%;max-width:720px;height:auto;" data-img-role="content" loading="lazy">
+
+      <h2>Design Rules That Prevent Assembly Defects</h2>
+      <p>Flex circuit assembly defects cluster around three design mistakes that are invisible in rigid PCB design but catastrophic when the board must bend. Fix these at the layout stage and the assembly yield difference is 5–10 percentage points.</p>
+
+      <p><strong>1. Trace routing at the bend zone.</strong> Traces crossing a bend line perpendicularly concentrate stress at a single point on each conductor. After 500–1,000 flex cycles, that concentration point develops a micro-crack that propagates into an open circuit. The fix: route all traces perpendicular to the bend axis — curved traces are even better. Keep traces in the neutral bend axis of the stackup, between two ground/power planes when possible, so they experience minimal tensile or compressive strain during flexing. Avoid 90-degree trace corners in bend zones entirely; use radiused corners with a minimum radius of 1.5× trace width.</p>
+
+      <p><strong>2. Component placement in rigid-flex designs.</strong> Never place components on the flex section — this should be obvious but violations appear routinely in first-revision designs. The flex region is for interconnects only. Components placed near the rigid-flex transition zone (within 3–5 mm) experience asymmetrical stress during reflow because the flex section expands at a different rate than the rigid FR-4. Stagger components away from the transition boundary. For designs using stiffeners (polyimide or FR-4 stiffeners bonded to the flex tail for connector support), treat the stiffened area like a rigid section for placement rules.</p>
+
+      <p><strong>3. Pad and via design for flex adhesion.</strong> Copper adhesion to polyimide is inherently weaker than copper-to-FR-4 bonding. Annular rings on flex layers should be 0.25–0.3 mm minimum — larger than the 0.15 mm you would use on a rigid board — to compensate for the higher risk of pad lift during rework or connector mating. Teardrop all pads and vias on flex layers. This adds 30 seconds of CAD time and eliminates a failure mode that is nearly impossible to catch in electrical test because the lifted pad will pass continuity right up until the first field flex cycle.</p>
+
+      <h2>Three Assembly Process Challenges Unique to Flex</h2>
+      <p>Standard SMT assembly lines are designed around rigid substrates that lie flat on conveyor belts, register against mechanical stops, and survive multiple thermal cycles without dimensional change. Flex circuits break all three assumptions.</p>
+
+      <p><strong>Challenge 1: Fixturing — the substrate won't stay flat.</strong> A 0.1 mm polyimide flex circuit placed directly on a reflow conveyor will sag between the conveyor rails, warp during preheat, and shift during placement. The solution is a dedicated carrier pallet — typically aluminum or high-temperature composite — with a precision-machined pocket that holds the flex circuit flat to within ±0.05 mm across the entire assembly area. Vacuum hold-down through the pallet keeps the flex substrate immobilized during printing and placement. For rigid-flex assemblies, the rigid sections provide natural fixturing points, but the flex tail must still be supported to prevent vibration-induced misalignment during high-speed placement. Budget one custom pallet per panel design at $300–800 per pallet, with 50,000+ placement cycle lifetimes.</p>
+
+      <p><strong>Challenge 2: Solder paste printing on non-planar surfaces.</strong> Even with a carrier pallet, the flex substrate surface is not as uniformly flat as FR-4. Polyimide has a higher coefficient of thermal expansion (CTE: 12–20 ppm/°C vs FR-4's 14–16 ppm in x-y) and absorbs ambient humidity that causes subtle swelling before reflow. This means the 100 µm stencil that prints perfectly on rigid boards may leave inconsistent paste deposits on flex pads. The fix: reduce stencil thickness to 80–100 µm for fine-pitch flex designs, use laser-cut stencils with nano-coating for improved release, and add a post-print SPI (solder paste inspection) step — the 30-second cycle time penalty is cheaper than the rework cost of a single insufficient-paste joint discovered at functional test.</p>
+
+      <p><strong>Challenge 3: Thermal profiling for dissimilar materials.</strong> A rigid-flex board with FR-4 rigid sections and polyimide flex layers is two materials with different thermal masses and different heat absorption rates going through the same reflow oven at the same time. The FR-4 section may reach liquidus 8–12 seconds before the flex section because polyimide has lower thermal conductivity (0.12 W/m·K vs FR-4's 0.3 W/m·K). The solution: profile the oven with thermocouples on both rigid and flex sections simultaneously, and adjust the soak zone duration so both materials enter reflow within a 3-second window of each other. This typically means extending the soak zone by 10–20 seconds beyond a standard rigid-board profile. For mixed assemblies combining flex circuits with heavy connectors or large BGAs on the rigid section, expect to run 2–3 profile iterations before locking in a production recipe.</p>
+
+      <img src="/generated/blog-flex-fixture.webp" alt="Photorealistic close-up of a flex PCB held flat on a machined aluminum carrier pallet inside an SMT assembly machine, amber flex circuit with copper pads visible against silver aluminum fixture, clean industrial lighting, precision engineering aesthetic" class="article-illustration" style="width:100%;max-width:720px;height:auto;" data-img-role="content" loading="lazy">
+
+      <h2>Inspection and Testing: What Changes for Flexible Circuits</h2>
+      <p>Standard AOI (automated optical inspection) works for rigid sections of a rigid-flex board but struggles with the flex tail — the curved, non-planar surface defeats the fixed-focus optics of most AOI systems. Electrical test (flying probe or bed-of-nails) remains the primary verification method for flex circuit continuity, but it must be supplemented with two additional steps that are not standard for rigid boards.</p>
+
+      <p><strong>Cross-section analysis on first-article flex boards.</strong> On the first production run of any flex or rigid-flex design, a destructive cross-section through the rigid-flex transition zone should be part of your first-article inspection report (FAIR). This reveals whether the no-flow prepreg used at the transition boundary has properly sealed the interface without bleeding into the flex area — a defect that is electrically invisible but mechanically fatal because cured prepreg in the flex zone creates a stress concentration point that will crack within the first 100 flex cycles.</p>
+
+      <p><strong>Dynamic flex cycle testing on production samples.</strong> IPC-6013 specifies bend cycle testing for qualification, but production-level sampling is what catches process drift. Pull one board per 500-unit production lot through a bend cycle fixture (minimum bend radius per the design specification, 100,000 cycles for dynamic-flex applications or 10 cycles for flex-to-install). Continuity monitoring during the test catches trace failures that passed electrical test on a flat fixture but fail under mechanical stress. This adds approximately $50 per lot to the quality assurance cost and prevents a field failure that costs 100× that amount in rework, shipping, and customer confidence.</p>
+
+      <p>For <a href="../blog/post-11.html">standard rigid board testing methods</a> — AOI, X-ray for BGA and QFN inspection, ICT, and functional test — these all apply to the rigid sections of rigid-flex assemblies and should be performed at the same frequency as your standard production. The added steps above are flex-specific supplements, not replacements.</p>
+
+      <img src="/generated/blog-flex-inspection.webp" alt="Photorealistic macro view of a rigid-flex PCB undergoing optical inspection under a microscope, amber flex section curving away from the dark green rigid section, precise lighting with copper reflections, quality control laboratory aesthetic" class="article-illustration" style="width:100%;max-width:720px;height:auto;" data-img-role="content" loading="lazy">
+
+      <h2>Supplier Qualification Checklist for Flex and Rigid-Flex Assembly</h2>
+      <p>Not every PCBA supplier that does excellent rigid board assembly can handle flex. The equipment is the same, but the process controls, fixture design capability, and inspection protocols are different. Here are the five questions that separate flex-capable assembly houses from those that will learn on your production run:</p>
+
+      <table class="checklist-table">
+        <thead><tr><th>Question</th><th>What to Look For</th><th>Red Flag</th></tr></thead>
+        <tbody>
+          <tr><td>1. Do you have in-house fixture design capability?</td><td>Dedicated mechanical engineer with flex pallet portfolio; can show CAD drawings of previous flex fixtures</td><td>"We buy standard pallets from our supplier" — one-size pallets don't fit flex designs</td></tr>
+          <tr><td>2. What is your flex assembly volume in the last 12 months?</td><td>≥50 flex or rigid-flex production runs; can share yield data by design type</td><td>"We have done a few prototypes" — prototyping a flex and producing 5,000 units are different skills</td></tr>
+          <tr><td>3. Do you have a documented flex-specific reflow profile procedure?</td><td>Procedure that specifies dual thermocouple placement (rigid + flex), soak zone adjustment rules, and profile validation criteria</td><td>"We use the same profile for everything" — this guarantees soldering defects on flex sections</td></tr>
+          <tr><td>4. What flex-specific inspection steps do you perform?</td><td>Cross-section on first article, dynamic bend cycle sampling, AOI on rigid sections with manual visual on flex tails</td><td>"AOI covers everything" — AOI cannot handle non-planar flex surfaces</td></tr>
+          <tr><td>5. Can you provide a flex-capable DFM report before production?</td><td>Report that specifically flags flex design issues: trace routing in bend zones, component proximity to transition boundary, pad sizes on flex layers, stiffener design</td><td>Generic DFM report with no flex-specific items — they didn't actually review the flex portion</td></tr>
+        </tbody>
+      </table>
+
+      <p>These questions are not theoretical. When you <a href="../blog/post-7.html">evaluate a PCB assembly partner in China</a>, the answers determine whether your first production run delivers 95% yield or 75% yield with a three-week delay for fixture redesign and re-profiling. For <a href="../blog/post-6.html">turnkey flex assembly programs</a> where the supplier also sources flex substrates and stiffeners, add a sixth question: "What is your flex substrate supplier qualification process and how many qualified flex laminators do you maintain relationships with?" Single-source flex laminators create supply chain risk that rigid PCB programs don't face because FR-4 is a commodity with dozens of qualified mills.</p>
+
+      <h2>Surface Finishes for Flex: ENIG Is Not Optional</h2>
+      <p>Flex circuit pads need a surface finish that provides three things simultaneously: flatness for fine-pitch component placement, corrosion resistance for the flex tail connector interface, and wire-bondability if the design includes chip-on-flex. Among the <a href="../blog/post-8.html">four main PCB surface finishes</a>, ENIG (electroless nickel immersion gold) is the only finish that delivers all three for flex applications:</p>
+
+      <table class="checklist-table">
+        <thead><tr><th>Finish</th><th>Flex Compatibility</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td>ENIG</td><td>Excellent — gold standard for flex</td><td>Flat (< 1 µm planarity), corrosion-resistant, solderable after multiple reflow cycles</td></tr>
+          <tr><td>ENEPIG</td><td>Excellent — for wire-bonding flex</td><td>Adds palladium layer for wire bond pull strength; 30–50% cost premium over ENIG</td></tr>
+          <tr><td>Immersion Silver</td><td>Acceptable — short shelf life</td><td>Flat surface, but tarnishes within 3–6 months; only use if assembly occurs within 60 days of board fab</td></tr>
+          <tr><td>HASL (lead-free)</td><td>Not recommended</td><td>Non-planar surface; thermal shock of HASL process can delaminate polyimide adhesive layers</td></tr>
+          <tr><td>OSP</td><td>Not recommended</td><td>Polyimide adhesion is weaker than FR-4; OSP coating may not uniformly protect flex pads through multiple thermal cycles</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cost-callout">
+        <h3>Conformal Coating Note</h3>
+        <p>Flex circuits that operate in humid, condensing, or corrosive environments benefit from conformal coating — but not all coating types are bend-compatible. Acrylic coatings are too rigid for dynamic flex and will crack at bend points. Use silicone-based or ultra-thin parylene coatings (<a href="../blog/post-12.html">see our conformal coating guide</a>) that maintain flexibility. Coating thickness should not exceed 25 µm on flex sections to avoid adding stiffness that changes the bend characteristics.</p>
+      </div>
+
+      <h2>Make-or-Buy Decision: When to Transition from Rigid to Flex</h2>
+      <p>Not every product benefits from flex or rigid-flex. The decision to move from rigid boards with connectors and ribbon cables to an integrated rigid-flex design is an engineering economics problem with three variables:</p>
+
+      <p>The rigid-flex solution makes sense when: (1) your assembly currently uses ≥2 rigid boards connected by cables or connectors — eliminating those interconnects and their assembly labor typically offsets 60–80% of the rigid-flex board cost premium; (2) your product has a space constraint that a folded rigid-flex design solves — wearable medical devices, compact industrial sensors, and aerospace avionics modules are the classic cases; (3) reliability of the board-to-board interconnect is a field failure driver — replacing a ZIF connector and FPC cable with an integrated rigid-flex transition eliminates a connector mating failure mode entirely.</p>
+
+      <p>The rigid solution stays when: your board count is one, your enclosure has ample space, and your board-to-board connections use a single robust connector with a proven field reliability record. Flex assembly adds cost, complexity, and supply chain constraints — it must solve a real design problem, not a hypothetical one.</p>
+
+      <p>For high-reliability applications — medical devices under ISO 13485, automotive engine control modules, industrial safety systems — the flex assembly partner you choose becomes part of your regulatory supply chain. Our <a href="../about.html">ISO 13485 and IPC-A-610 Class 3 certifications</a> apply to both rigid and flex assembly programs, with the same traceability and documentation standards across both. If you are evaluating your first flex design transition, <a href="../blog/post-4.html">factor the assembly partner's flex experience into your lead time planning</a> — a supplier learning flex assembly on your program will add 4–8 weeks to first-article delivery compared to one with established flex process controls.</p>
+    </div>
+
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div><h2 class="cta-band-title">Get a flex or rigid-flex PCB assembly quote with DFM review</h2><p class="cta-band-lead">Send us your Gerber files and stackup drawing. You'll receive a flex-capable DFM report identifying design issues specific to your flex sections, plus a production quote with fixturing cost, reflow profile plan, and per-board pricing — within 24 hours.</p></div>
+        <div class="cta-band-actions" style="align-items:center;"><a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Submit Your Flex Design for Quote</a><a href="../contact.html" class="cta-secondary-link-post">Schedule a Call</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container"><div class="footer-grid">
+      <div class="footer-col"><h4>Uppcba</h4><p>Precision PCB assembly for prototype through mid-volume production. ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../products.html">Products</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../products/smt.html">SMT Assembly</a></li><li><a href="../products/dip.html">DIP Assembly</a></li><li><a href="../products/mixed.html">Mixed Assembly</a></li><li><a href="../products.html">Box Build</a></li><li><a href="../about.html">DFM Review</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>Email: inquiry@uppcba.com<br>Phone: +86 (755) 8xxx-xxxx<br><br>Shenzhen, Guangdong<br>China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Uppcba. All rights reserved.</span><span>Built with precision.</span></div></div>
+  </footer>
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form onsubmit="return handleInquiry(event)" novalidate>
+          <div class="form-group"><label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label><input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label><input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label" for="inq-company">Company</label><input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name"></div>
+          <div class="form-group"><label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label><textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../inquiry-handler.js"></script>
+  <script src="../reveal.js"></script>
+</body>
+</html>
